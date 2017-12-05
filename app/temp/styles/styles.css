@@ -450,12 +450,15 @@ template {
   display: none;
 }
 
-/* Global Styles
-   ========================================================================== */
+/*
+	
+	
+// ==========================================================================
+// Global Styles
+// ==========================================================================
 
-/**
- * 
- */
+
+*/
 
 * {
 	-webkit-box-sizing: border-box;
@@ -477,35 +480,40 @@ body {
 }
 
 .wrapper {
-	position: relative;
+	/*
+	border: 1px solid #000;
+	*/
 	max-width: 1170px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
 }
 
-.wrapper:after {
-		content: " ";
-    	display: block;
-    	clear: both;
-	}
+/*
+	
+	
+// ==========================================================================
+// Header Styles
+// ==========================================================================
 
-/* Header Styles
-   ========================================================================== */
 
-/**
- * 
- */
+*/
 
 .header {
+ 	position: fixed;
+ 	top: 0;
  	background-color: #e33b43;
  	height: 80px;
+ 	width: 100%;
 	color: #fff;
  }
 
 .header__logo {
- 		position: absolute;
- 		left: 5px;
- 		top: 24px;
+ 		grid-column: 1 / 2;
+ 		grid-row: 1;
+ 		height: 80px;
+ 		padding-top: 4px;
  		font-size: 2rem;
  		font-family: 'pacificoregular';
  	}
@@ -513,8 +521,6 @@ body {
 @media (min-width: 720px) {
 
 .header__logo {
- 			left: 0;
- 			top: 4px;
  			font-size: 3.45rem;
  			letter-spacing: -0.0099em
  	}
@@ -528,9 +534,8 @@ body {
 
 .header__tagline {
  			display: block;
- 			position: absolute;
- 			top: 62px;
- 			left: 50px;
+ 			margin-top: -5px;
+ 			margin-left: 50px;
  			font-family: "PT Sans Narrow", sans-serif;
  			font-size: .75rem;
  			letter-spacing: 0.12em
@@ -538,9 +543,11 @@ body {
 	}
 
 .header__button {
- 		position: absolute;
- 		right: 0;
- 		top: 18px;
+ 		grid-column: 3 / 3;
+ 		grid-row: 1;
+ 		-ms-flex-item-align: center;
+ 		    align-self: center;
+ 		justify-self: end;
  		height: 44px;
  		width: 181px;
  		font-family: "Lato", sans-serif;
@@ -572,3 +579,25 @@ body {
  				display: inline-block
  		}
 	}
+
+.header__button--on:after {
+ 			font-family: FontAwesome;
+ 			font-size: .9em;
+ 			font-weight: normal;
+ 			font-style: normal;
+ 			display: inline-block;
+ 			padding-left: 3px;
+ 			content: '\f077';
+ 			text-decoration: inherit;
+ 		}
+
+.header__button--off:after {
+ 			font-family: FontAwesome;
+ 			font-size: .9em;
+ 			font-weight: normal;
+ 			font-style: normal;
+ 			display: inline-block;
+ 			padding-left: 3px;
+ 			content: '\f078';
+ 			text-decoration: inherit;
+ 		}

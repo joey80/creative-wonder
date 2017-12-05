@@ -1,9 +1,12 @@
-/* Global Styles
-   ========================================================================== */
+/*
+	
+	
+// ==========================================================================
+// Global Styles
+// ==========================================================================
 
-/**
- * 
- */
+
+*/
 
 * {
 	box-sizing: border-box;
@@ -24,14 +27,12 @@ body {
 }
 
 .wrapper {
-	position: relative;
+	/*
+	border: 1px solid #000;
+	*/
 	max-width: 1170px;
-	margin-left: auto;
-	margin-right: auto;
-
-	&:after {
-		content: " ";
-    	display: block;
-    	clear: both;
-	}
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
 }
