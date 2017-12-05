@@ -38,14 +38,14 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
 var DOMController = (function() {
     
     var DOMstrings = {
-		navMenu: 'nav',
-		navMenuParentArrow: 'drop',
-        menuButton: '.menu-button',
-		mobileMenu: '.mobile-menu',
-		mobileMenuLi: 'nav li',
-		menuButtonArrowOn: 'on',
-		menuButtonArrowOff: 'off',
-		menuTopPosition: 'top'
+		//navMenu: 'nav', //WIP
+		//navMenuParentArrow: 'drop', //WIP
+        menuButton: '.header__button',
+		//mobileMenu: '.mobile-menu', //OLD
+		//mobileMenuLi: 'nav li',
+		menuButtonArrowOn: 'header__button--on',
+		menuButtonArrowOff: 'header__button--off'
+		//menuTopPosition: 'top'
 	};
 
 	return {
@@ -59,12 +59,12 @@ var DOMController = (function() {
 var UIController = (function() {
 
 	var DOM = DOMController.getDOMstrings(),
-		navClass = document.querySelector(DOM.navMenu).classList,
+		//navClass = document.querySelector(DOM.navMenu).classList,
 		menuButtonClass = document.querySelector(DOM.menuButton).classList,
-		topClass = DOM.menuTopPosition,
+		//topClass = DOM.menuTopPosition,
 		arrowOn = DOM.menuButtonArrowOn,
-		arrowOff = DOM.menuButtonArrowOff,
-		drop = DOM.navMenuParentArrow;
+		arrowOff = DOM.menuButtonArrowOff;
+		//drop = DOM.navMenuParentArrow;
 
 	var menuToggle = function() {
 
@@ -73,12 +73,12 @@ var UIController = (function() {
 		- transition doesn't happen on tablet for some reason
 		*/
 
-		navClass.toggle(topClass);
+		//navClass.toggle(topClass);
 		addRemoveArrow();
 
 	};
 
-	var menuCloseOnScroll = function() {
+	/*var menuCloseOnScroll = function() {
 		
 		let called = false;
 
@@ -92,7 +92,7 @@ var UIController = (function() {
 			}
 		}
 			  
-	}();
+	}();*/
 
 	var addRemoveArrow = function() {
 
@@ -110,11 +110,11 @@ var UIController = (function() {
 		return !!( e.offsetWidth || e.offsetHeight );
 	}
 
-	var navMenuInit = function() {
+	/*var navMenuInit = function() {
 		
 		$('nav li:has(ul)').addClass(drop);
 
-	};
+	};*/
 
 	var setupEventListeners = function() {
 
@@ -123,7 +123,7 @@ var UIController = (function() {
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
 
 		// For the mobile nav menu. Hide/show links. This is a work in progress and needs to be completely redone
-		document.querySelector(DOM.mobileMenu).addEventListener('click', function() {
+		/*document.querySelector(DOM.mobileMenu).addEventListener('click', function() {
 			menuToggle();
 			mobileLinks.forEach(function(links){
 				links.addEventListener('click', function() {
@@ -137,16 +137,16 @@ var UIController = (function() {
 					}					
 				})
 			})
-		});
+		});*/
 
-		window.addEventListener('scroll', menuCloseOnScroll);
+		//window.addEventListener('scroll', menuCloseOnScroll);
 	};			
 
 	return {
 		init: function() {
 			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
-			navMenuInit();
+			//navMenuInit();
 
 			// All the other crap
 		}
