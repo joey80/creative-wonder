@@ -1,0 +1,74 @@
+/* Header Styles
+   ========================================================================== */
+
+/**
+ * 
+ */
+
+ .header {
+ 	background-color: $mainRedColor;
+ 	height: 80px;
+	color: #fff;
+
+ 	&__logo {
+ 		position: absolute;
+ 		left: 5px;
+ 		top: 24px;
+ 		font-size: 2rem;
+ 		font-family: 'pacificoregular';
+
+ 		@mixin mediumScreen {
+ 			left: 0;
+ 			top: 4px;
+ 			font-size: 3.45rem;
+ 			letter-spacing: -0.0099em;
+ 		}
+ 	}
+
+ 	&__tagline {
+ 		display: none;
+
+ 		@mixin mediumScreen {
+ 			display: block;
+ 			position: absolute;
+ 			top: 62px;
+ 			left: 50px;
+ 			font-family: "PT Sans Narrow", sans-serif;
+ 			font-size: .75rem;
+ 			letter-spacing: 0.12em;
+ 		}
+ 	}
+
+ 	&__button {
+ 		position: absolute;
+ 		right: 0;
+ 		top: 18px;
+ 		height: 44px;
+ 		width: 181px;
+ 		font-family: "Lato", sans-serif;
+ 		font-size: .85rem;
+ 		cursor: pointer;
+ 		border: 1px solid rgba(230, 230, 230, 0.3);
+ 		background-color: $mainRedColor;
+ 		color: #fff;
+ 		padding: 7px;
+
+ 		&:focus {
+ 			outline: 1px dotted #fff;
+ 		}
+
+ 		&:hover {
+ 			color: #d91122;
+ 			border-color: #fff;
+ 			background-color: #fff;
+ 		}
+
+ 		&__text {
+ 			display: none;
+ 			
+ 			@mixin mediumScreen {
+ 				display: inline-block;
+ 			}
+ 		}
+ 	}
+ }
