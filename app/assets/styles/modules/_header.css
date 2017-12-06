@@ -15,18 +15,18 @@
  	height: 80px;
  	width: 100%;
 	color: #fff;
+	z-index: 2;
 
  	&__logo {
  		grid-column: 1 / 2;
  		grid-row: 1;
  		height: 80px;
- 		padding-top: 4px;
  		font-size: 2rem;
  		font-family: 'pacificoregular';
  		padding-top: 20px;
 
  		@mixin mediumScreen {
- 			padding-top: 0;
+ 			padding-top: 4px;
  			font-size: 3.45rem;
  			letter-spacing: -0.0099em;
  		}

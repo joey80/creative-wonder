@@ -10,42 +10,15 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
 	}
 }
 
-// Within the controller
-// element = DOMstrings.incomeContainer;
-
-// Outside the controller
-// var DOM = UICtrl.getDOMstrings();
-// document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-// document.querySelector(DOM.navMenu).style.display = 'block';
-
-
-
-/*
-/
-/ 
-/ TODO!!!
-
-	- Completely redo the mobile navigation
-
-/
-/
-*/
-
-
-
-
 
 var DOMController = (function() {
     
     var DOMstrings = {
-		//navMenu: 'nav', //WIP
-		//navMenuParentArrow: 'drop', //WIP
+		navMenu: '.menu',
         menuButton: '.header__button',
-		//mobileMenu: '.mobile-menu', //OLD
-		//mobileMenuLi: 'nav li',
 		menuButtonArrowOn: 'header__button--on',
-		menuButtonArrowOff: 'header__button--off'
-		//menuTopPosition: 'top'
+		menuButtonArrowOff: 'header__button--off',
+		navMenuHide: 'menu--hidden'
 	};
 
 	return {
@@ -56,43 +29,40 @@ var DOMController = (function() {
 
 })();
 
-var UIController = (function() {
+var MenuController = (function() {
 
 	var DOM = DOMController.getDOMstrings(),
-		//navClass = document.querySelector(DOM.navMenu).classList,
+		navClass = document.querySelector(DOM.navMenu).classList,
 		menuButtonClass = document.querySelector(DOM.menuButton).classList,
-		//topClass = DOM.menuTopPosition,
+		navMenuHide = DOM.navMenuHide,
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff;
-		//drop = DOM.navMenuParentArrow;
 
 	var menuToggle = function() {
 
-		//TODO:
-		/*
-		- transition doesn't happen on tablet for some reason
-		*/
+		if (navClass.contains(navMenuHide)) {
+			navClass.remove(navMenuHide);
+		} else {
+			navClass.add(navMenuHide);
+		}
 
-		//navClass.toggle(topClass);
 		addRemoveArrow();
-
 	};
 
-	/*var menuCloseOnScroll = function() {
+	var menuCloseOnScroll = function() {
 		
 		let called = false;
 
 		return function() {
-			if (!called) {
-				navClass.remove(topClass);
+			if (!called || navClass.contains(navMenuHide)) {
 				called = true;
-			} else if (navClass.contains(topClass)) {
+			} else if (called) {
+				navClass.add(navMenuHide);
 				addRemoveArrow();
 				called = false;
 			}
-		}
-			  
-	}();*/
+		}  
+	};
 
 	var addRemoveArrow = function() {
 
@@ -103,50 +73,20 @@ var UIController = (function() {
 			menuButtonClass.remove(arrowOff);
 			menuButtonClass.add(arrowOn);
 		}
-
 	};
-
-	var isVisible = function(e) {
-		return !!( e.offsetWidth || e.offsetHeight );
-	}
-
-	/*var navMenuInit = function() {
-		
-		$('nav li:has(ul)').addClass(drop);
-
-	};*/
 
 	var setupEventListeners = function() {
 
-		let mobileLinks = document.querySelectorAll(DOM.mobileMenuLi);
+		//let mobileLinks = document.querySelectorAll(DOM.mobileMenuLi);
 		
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
-
-		// For the mobile nav menu. Hide/show links. This is a work in progress and needs to be completely redone
-		/*document.querySelector(DOM.mobileMenu).addEventListener('click', function() {
-			menuToggle();
-			mobileLinks.forEach(function(links){
-				links.addEventListener('click', function() {
-					
-					for (let i = 0; i < this.children.length; i++) {
-						if(this.children[i].style.display === 'block') {
-							this.children[i].style.display = 'none';
-						} else {
-							this.children[i].style.display = 'block';
-						}
-					}					
-				})
-			})
-		});*/
-
-		//window.addEventListener('scroll', menuCloseOnScroll);
+		window.addEventListener('scroll', menuCloseOnScroll);
 	};			
 
 	return {
 		init: function() {
 			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
-			//navMenuInit();
 
 			// All the other crap
 		}
@@ -155,7 +95,7 @@ var UIController = (function() {
 })();
 
 
-UIController.init();
+MenuController.init();
 
 
 /// TODO!!! 
@@ -214,3 +154,11 @@ $(document).ready(function() {
 });
 
 */
+
+
+/*
+	var isVisible = function(e) {
+		return !!( e.offsetWidth || e.offsetHeight );
+	}
+
+	*/

@@ -455,7 +455,7 @@ template {
 }
 
 body {
-    font-family: "PT Sans Narrow", sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     color: #444;
     background-color: #e2eff1;
 }
@@ -465,6 +465,7 @@ body {
 	border: 1px solid #000;
 	*/
     max-width: 1170px;
+    height: inherit;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -488,13 +489,13 @@ body {
     height: 80px;
     width: 100%;
     color: #fff;
+    z-index: 2;
 }
 
 .header__logo {
     grid-column: 1 / 2;
     grid-row: 1;
     height: 80px;
-    padding-top: 4px;
     font-size: 2rem;
     font-family: 'pacificoregular';
     padding-top: 20px;
@@ -502,7 +503,7 @@ body {
 
 @media (min-width: 720px) {
     .header__logo {
-        padding-top: 0;
+        padding-top: 4px;
         font-size: 3.45rem;
         letter-spacing: -0.0099em;
     }
@@ -630,4 +631,83 @@ body {
 */
 
 .menu {
+    position: fixed;
+    top: 0;
+    font-family: 'Lato', sans-serif;
+    margin-top: 80px;
+    width: 100%;
+    height: 70px;
+    background-color: #15273f;
+    color: #fff;
+    font-size: 1rem;
+    -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+}
+
+.menu__list__first {
+    margin: 0;
+    padding-top: 25px;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    height: inherit;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-item-align: center;
+    align-self: center;
+    list-style-type: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.menu ul ul {
+    position: absolute;
+    margin-top: 7px;
+    display: none;
+    margin: 25px auto;
+    background-color: #1a304e;
+    border-radius: 0 10px;
+    width: inherit;
+    min-width: 3000px;
+    margin-left: -25px;
+    padding-top: 17px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.menu ul li:hover > ul {
+    display: block;
+}
+
+.menu ul ul li {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-item-align: center;
+    align-self: center;
+    list-style-type: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+    padding: 0 10px 0 0;
+}
+
+.menu__arrow:after {
+    font-family: FontAwesome;
+    font-size: .4em;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 8px;
+    content: '\f078';
+    text-decoration: inherit;
+}
+
+.menu--hidden {
+    margin-top: -60px;
+    -webkit-transition: all .4s ease;
+            transition: all .4s ease;
 }

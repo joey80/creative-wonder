@@ -21,7 +21,7 @@
 }
 
 body {
-	font-family: "PT Sans Narrow", sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 	color: $mainFontColor;
 	background-color: $mainBackgroundColor;
 }
@@ -31,6 +31,7 @@ body {
 	border: 1px solid #000;
 	*/
 	max-width: 1170px;
+	height: inherit;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

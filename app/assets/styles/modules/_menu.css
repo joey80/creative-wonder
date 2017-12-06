@@ -9,5 +9,71 @@
 */
 
 .menu {
-	
+	position: fixed;
+	top: 0;
+	font-family: 'Lato', sans-serif;
+	margin-top: 80px;
+	width: 100%;
+	height: 70px;
+	background-color: $mainBlueColor;
+	color: #fff;
+	font-size: 1rem;
+	transition: all .4s ease;
+
+	&__list__first {
+		margin: 0;
+		padding-top: 25px;
+		grid-column: 1 / 3;
+ 		grid-row: 1;
+ 		height: inherit;
+		justify-content: space-between;
+ 		align-self: center;
+		list-style-type: none;
+		display: inline-flex;
+		cursor: pointer;
+	}
+
+	& ul ul {
+		position: absolute;
+		margin-top: 7px;
+		display: none;
+		margin: 25px auto;
+		background-color: $mainLightBlueColor;
+		border-radius: 0 10px;
+		width: inherit;
+		min-width: 3000px;
+		margin-left: -25px;
+		padding-top: 17px;
+		padding-bottom: 10px;
+		text-align: left;
+	}
+
+	& ul li:hover > ul {
+		display: block;
+	}
+
+	& ul ul li {
+		justify-content: space-between;
+ 		align-self: center;
+		list-style-type: none;
+		display: inline-flex;
+		cursor: pointer;
+		padding: 0 10px 0 0;
+	}
+
+	&__arrow:after {
+		font-family: FontAwesome;
+		font-size: .4em;
+		font-weight: normal;
+		font-style: normal;
+		display: inline-block;
+		margin-left: 8px;
+		content: '\f078';
+		text-decoration: inherit;
+	}
+
+	&--hidden {
+		margin-top: -60px;
+		transition: all .4s ease;
+	}
 }
