@@ -14,51 +14,55 @@
 	font-family: 'Lato', sans-serif;
 	margin-top: 80px;
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	background-color: $mainBlueColor;
 	color: #fff;
-	font-size: 1rem;
+	font-size: 0.95rem;
 	transition: all .4s ease;
 
 	&__list__first {
 		margin: 0;
 		padding-top: 25px;
+		padding-left: 20px; 
 		grid-column: 1 / 3;
  		grid-row: 1;
  		height: inherit;
-		justify-content: space-between;
  		align-self: center;
 		list-style-type: none;
 		display: inline-flex;
 		cursor: pointer;
 	}
 
+	& li:hover {
+		color: $mainGreenColor;
+	}
+
+	& ul li {
+		padding-right: 48px;
+	}
+
 	& ul ul {
 		position: absolute;
-		margin-top: 7px;
 		display: none;
-		margin: 25px auto;
+		margin: 17px auto;
 		background-color: $mainLightBlueColor;
 		border-radius: 0 10px;
 		width: inherit;
 		min-width: 3000px;
 		margin-left: -25px;
-		padding-top: 17px;
-		padding-bottom: 10px;
 		text-align: left;
 	}
 
 	& ul li:hover > ul {
+		color: rgba(255, 255, 255, 0.3);
 		display: block;
 	}
 
 	& ul ul li {
-		justify-content: space-between;
- 		align-self: center;
 		list-style-type: none;
 		display: inline-flex;
 		cursor: pointer;
-		padding: 0 10px 0 0;
+		padding: 15px 40px 15px 0;
 	}
 
 	&__arrow:after {

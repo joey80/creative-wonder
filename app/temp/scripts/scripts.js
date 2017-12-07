@@ -50,18 +50,14 @@ var MenuController = (function() {
 	};
 
 	var menuCloseOnScroll = function() {
-		
-		let called = false;
 
-		return function() {
-			if (!called || navClass.contains(navMenuHide)) {
-				called = true;
-			} else if (called) {
-				navClass.add(navMenuHide);
-				addRemoveArrow();
-				called = false;
-			}
-		}  
+		if (navClass.contains(navMenuHide)) {
+			return
+		} else {
+			navClass.add(navMenuHide);
+			addRemoveArrow();
+			return
+		}
 	};
 
 	var addRemoveArrow = function() {

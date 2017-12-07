@@ -15,7 +15,7 @@
  	height: 80px;
  	width: 100%;
 	color: #fff;
-	z-index: 2;
+	z-index: 3;
 
  	&__logo {
  		grid-column: 1 / 2;
