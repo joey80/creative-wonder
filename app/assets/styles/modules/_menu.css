@@ -14,23 +14,31 @@
 	font-family: 'Lato', sans-serif;
 	margin-top: 80px;
 	width: 100%;
-	height: 60px;
 	background-color: $mainBlueColor;
 	color: #fff;
-	font-size: 0.95rem;
+	font-size: 0.8rem;
 	transition: all .4s ease;
 
+	@mixin mediumScreen {
+		height: 60px;
+		font-size: 0.95rem;
+	}
+	
 	&__list__first {
-		margin: 0;
-		padding-top: 25px;
-		padding-left: 20px; 
-		grid-column: 1 / 3;
+		padding-top: 5px;
+		padding-left: 20px;
  		grid-row: 1;
  		height: inherit;
- 		align-self: center;
-		list-style-type: none;
-		display: inline-flex;
 		cursor: pointer;
+		list-style-type: none;
+
+		@mixin mediumScreen {
+			margin: 0;
+			grid-column: 1 / 3;
+			padding-top: 25px;
+			align-self: center;
+			display: inline-flex;
+		}
 	}
 
 	& li:hover {
@@ -38,19 +46,31 @@
 	}
 
 	& ul li {
-		padding-right: 48px;
+		padding-bottom: 20px;
+
+		@mixin mediumScreen {
+			padding-bottom: 0;
+			padding-right: 48px;
+		}
 	}
 
 	& ul ul {
-		position: absolute;
-		display: none;
-		margin: 17px auto;
+		display: block;
 		background-color: $mainLightBlueColor;
-		border-radius: 0 10px;
-		width: inherit;
-		min-width: 3000px;
+		min-width: 700px;
 		margin-left: -25px;
-		text-align: left;
+		margin-top: 10px;
+
+		@mixin mediumScreen {
+			position: absolute;
+			display: none;
+			margin: 17px auto;
+			border-radius: 0 10px;
+			width: inherit;
+			min-width: 3000px;
+			margin-left: -25px;
+			text-align: left;
+		}
 	}
 
 	& ul li:hover > ul {
@@ -59,25 +79,58 @@
 	}
 
 	& ul ul li {
-		list-style-type: none;
 		display: inline-flex;
-		cursor: pointer;
-		padding: 15px 40px 15px 0;
+		padding: 15px 10px 15px 0;
+
+		@mixin mediumScreen {
+			list-style-type: none;
+			cursor: pointer;
+			padding: 15px 20px 15px 0;
+		}
+	}
+
+	& ul ul li:after {
+		content: none;
+		margin-left: 0;
+
+		@mixin mediumScreen {
+			font-size: .8rem;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			margin-left: 20px;
+			padding: 0;
+			content: '|';
+			text-decoration: inherit;
+			color: rgba(251, 248, 248, 0.2);
+		}
+	}
+
+	& ul ul li:last-child:after {
+		content: none;
 	}
 
 	&__arrow:after {
-		font-family: FontAwesome;
-		font-size: .4em;
-		font-weight: normal;
-		font-style: normal;
-		display: inline-block;
-		margin-left: 8px;
-		content: '\f078';
-		text-decoration: inherit;
+		content: none;
+
+		@mixin mediumScreen {
+			font-family: FontAwesome;
+			font-size: .4em;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			margin-left: 8px;
+			content: '\f078';
+			text-decoration: inherit;
+		}
 	}
 
 	&--hidden {
-		margin-top: -60px;
 		transition: all .4s ease;
+		margin-top: -100%;
+
+		@mixin mediumScreen {
+			margin-top: -60px;
+		}
 	}
 }

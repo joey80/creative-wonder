@@ -496,16 +496,24 @@ body {
     grid-column: 1 / 2;
     grid-row: 1;
     height: 80px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-family: 'pacificoregular';
     padding-top: 20px;
+    padding-left: 10px;
 }
 
 @media (min-width: 720px) {
     .header__logo {
         padding-top: 4px;
+        padding-left: 15px;
         font-size: 3.45rem;
         letter-spacing: -0.0099em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .header__logo {
+        padding-left: 0;
     }
 }
 
@@ -539,14 +547,22 @@ body {
     padding: 7px;
     height: 44px;
     width: 40px;
+    margin-right: 5px;
 }
 
 @media (min-width: 720px) {
     .header__button {
         font-size: .85rem;
+        margin-right: 15px;
         border: 1px solid rgba(230, 230, 230, .3);
         height: 44px;
         width: 181px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .header__button {
+        margin-right: 0;
     }
 }
 
@@ -636,28 +652,40 @@ body {
     font-family: 'Lato', sans-serif;
     margin-top: 80px;
     width: 100%;
-    height: 60px;
     background-color: #15273f;
     color: #fff;
-    font-size: .95rem;
+    font-size: .8rem;
     -webkit-transition: all .4s ease;
             transition: all .4s ease;
 }
 
+@media (min-width: 720px) {
+    .menu {
+        height: 60px;
+        font-size: .95rem;
+    }
+}
+
 .menu__list__first {
-    margin: 0;
-    padding-top: 25px;
+    padding-top: 5px;
     padding-left: 20px;
-    grid-column: 1 / 3;
     grid-row: 1;
     height: inherit;
-    -ms-flex-item-align: center;
-    align-self: center;
-    list-style-type: none;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
     cursor: pointer;
+    list-style-type: none;
+}
+
+@media (min-width: 720px) {
+    .menu__list__first {
+        margin: 0;
+        grid-column: 1 / 3;
+        padding-top: 25px;
+        -ms-flex-item-align: center;
+        align-self: center;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+    }
 }
 
 .menu li:hover {
@@ -665,19 +693,35 @@ body {
 }
 
 .menu ul li {
-    padding-right: 48px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 720px) {
+    .menu ul li {
+        padding-bottom: 0;
+        padding-right: 48px;
+    }
 }
 
 .menu ul ul {
-    position: absolute;
-    display: none;
-    margin: 17px auto;
+    display: block;
     background-color: #1a304e;
-    border-radius: 0 10px;
-    width: inherit;
-    min-width: 3000px;
+    min-width: 700px;
     margin-left: -25px;
-    text-align: left;
+    margin-top: 10px;
+}
+
+@media (min-width: 720px) {
+    .menu ul ul {
+        position: absolute;
+        display: none;
+        margin: 17px auto;
+        border-radius: 0 10px;
+        width: inherit;
+        min-width: 3000px;
+        margin-left: -25px;
+        text-align: left;
+    }
 }
 
 .menu ul li:hover > ul {
@@ -686,27 +730,68 @@ body {
 }
 
 .menu ul ul li {
-    list-style-type: none;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    cursor: pointer;
-    padding: 15px 40px 15px 0;
+    padding: 15px 10px 15px 0;
+}
+
+@media (min-width: 720px) {
+    .menu ul ul li {
+        list-style-type: none;
+        cursor: pointer;
+        padding: 15px 20px 15px 0;
+    }
+}
+
+.menu ul ul li:after {
+    content: none;
+    margin-left: 0;
+}
+
+@media (min-width: 720px) {
+    .menu ul ul li:after {
+        font-size: .8rem;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        margin-left: 20px;
+        padding: 0;
+        content: '|';
+        text-decoration: inherit;
+        color: rgba(251, 248, 248, .2);
+    }
+}
+
+.menu ul ul li:last-child:after {
+    content: none;
 }
 
 .menu__arrow:after {
-    font-family: FontAwesome;
-    font-size: .4em;
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    margin-left: 8px;
-    content: '\f078';
-    text-decoration: inherit;
+    content: none;
+}
+
+@media (min-width: 720px) {
+    .menu__arrow:after {
+        font-family: FontAwesome;
+        font-size: .4em;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        margin-left: 8px;
+        content: '\f078';
+        text-decoration: inherit;
+    }
 }
 
 .menu--hidden {
-    margin-top: -60px;
     -webkit-transition: all .4s ease;
             transition: all .4s ease;
+    margin-top: -100%;
+}
+
+@media (min-width: 720px) {
+    .menu--hidden {
+        margin-top: -60px;
+    }
 }

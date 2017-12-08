@@ -21,14 +21,20 @@
  		grid-column: 1 / 2;
  		grid-row: 1;
  		height: 80px;
- 		font-size: 2rem;
+ 		font-size: 2.2rem;
  		font-family: 'pacificoregular';
  		padding-top: 20px;
+ 		padding-left: 10px;
 
  		@mixin mediumScreen {
  			padding-top: 4px;
+ 			padding-left: 15px; 
  			font-size: 3.45rem;
  			letter-spacing: -0.0099em;
+ 		}
+
+ 		@mixin largeScreen {
+ 			padding-left: 0;
  		}
  	}
 
@@ -59,12 +65,18 @@
  		padding: 7px;
  		height: 44px;
  		width: 40px;
+ 		margin-right: 5px;
 
  		@mixin mediumScreen {
  			font-size: .85rem;
+ 			margin-right: 15px;
  			border: 1px solid rgba(230, 230, 230, 0.3);
  			height: 44px;
  			width: 181px;
+ 		}
+
+ 		@mixin largeScreen {
+ 			margin-right: 0;
  		}
 
  		&:focus {
