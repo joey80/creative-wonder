@@ -1,15 +1,3 @@
-// Fixes the iOS rotation zoom bug
-// CREDIT: http://adactio.com/journal/4470/
-if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
-	var viewportmeta = document.querySelector('meta[name="viewport"]');
-	if (viewportmeta) {
-		viewportmeta.content = 'width=device-width, minimum-scale=.25, maximum-scale=1.6, initial-scale=1.0, user-scalable=no';
-		document.body.addEventListener('gesturestart', function() {
-			viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6, user-scalable=no';
-		}, false);
-	}
-}
-
 
 var DOMController = (function() {
     
@@ -19,7 +7,9 @@ var DOMController = (function() {
         menuButton: '.header__button',
 		menuButtonArrowOn: 'header__button--on',
 		menuButtonArrowOff: 'header__button--off',
-		navMenuHide: 'menu--hidden'
+		navMenuHide: 'menu--hidden',
+		navMenuDown: 'menu--down',
+		navMenuList: '.menu__list__first'
 	};
 
 	return {
@@ -33,30 +23,42 @@ var DOMController = (function() {
 var MenuController = (function() {
 
 	var DOM = DOMController.getDOMstrings(),
-		navClass = document.querySelector(DOM.navMenu).classList,
-		menuButtonClass = document.querySelector(DOM.menuButton).classList,
-		menuButtonText = document.querySelector(DOM.menuButtonText),
+		navClass = document.querySelector(DOM.navMenu).classList,             // The menu div
+		navMenuListClass = document.querySelector(DOM.navMenuList).classList, // The menu ul
+		menuButtonClass = document.querySelector(DOM.menuButton).classList,   // The header button
+		menuButtonText = document.querySelector(DOM.menuButtonText),          // The header button text
 		navMenuHide = DOM.navMenuHide,
+		navMenuDown = DOM.navMenuDown,
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff;
 
+
+    // Helper function to check to see if something is visible
 	var isVisible = function(e) {
 		return !!( e.offsetWidth || e.offsetHeight );
 	}
 
+
+    // Controls the animation for revealing the ul list in the menu and dropping down the 
+    // menu itself. Once the menu hides then the arrow in the menu button will change again
 	var menuToggle = function() {
 
 		if (navClass.contains(navMenuHide)) {
 			navClass.remove(navMenuHide);
+			setTimeout(function() {
+				navMenuListClass.add(navMenuDown);
+			}, 300);
 		} else {
 			navClass.add(navMenuHide);
+			navMenuListClass.remove(navMenuDown);
 		}
 
 		addRemoveArrow();
 	};
 
-	// TODO MOBILE MENU TOGGLE??
 
+    // On tablet and desktop this will close the menu once the user starts to scroll.
+    // This doesn't work on mobile because of the small screen size
 	var menuCloseOnScroll = function() {
 
 		if (navClass.contains(navMenuHide) || isVisible(menuButtonText) === false) {
@@ -68,6 +70,8 @@ var MenuController = (function() {
 		}
 	};
 
+
+	// This will either add or remove the up/down arrow in the header button for the menu
 	var addRemoveArrow = function() {
 
 		if (menuButtonClass.contains(arrowOn)) {
@@ -79,9 +83,9 @@ var MenuController = (function() {
 		}
 	};
 
-	var setupEventListeners = function() {
 
-		//let mobileLinks = document.querySelectorAll(DOM.mobileMenuLi);
+	// Sets up all of the event listener for the header and menu DOM items
+	var setupEventListeners = function() {
 		
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
 		window.addEventListener('scroll', menuCloseOnScroll);
@@ -92,7 +96,7 @@ var MenuController = (function() {
 			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
 
-			// All the other crap
+			// Anything else to come
 		}
 	}
 
@@ -102,9 +106,20 @@ var MenuController = (function() {
 MenuController.init();
 
 
-/// TODO!!! 
 
-///// DIV SLIDER (foreach loop??)
+
+
+// Fixes the iOS rotation zoom bug
+// CREDIT: http://adactio.com/journal/4470/
+if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+	var viewportmeta = document.querySelector('meta[name="viewport"]');
+	if (viewportmeta) {
+		viewportmeta.content = 'width=device-width, minimum-scale=.25, maximum-scale=1.6, initial-scale=1.0, user-scalable=no';
+		document.body.addEventListener('gesturestart', function() {
+			viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6, user-scalable=no';
+		}, false);
+	}
+}
 
 
 
@@ -158,11 +173,3 @@ $(document).ready(function() {
 });
 
 */
-
-
-/*
-	var isVisible = function(e) {
-		return !!( e.offsetWidth || e.offsetHeight );
-	}
-
-	*/
