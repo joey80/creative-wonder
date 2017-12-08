@@ -1,5 +1,5 @@
 @define-mixin mediumScreen {
-	@media (min-width: 720px) {
+	@media (min-width: 790px) {
 		@mixin-content;
 	}
 }

@@ -80,13 +80,19 @@
  		}
 
  		&:focus {
- 			outline: 1px dotted #fff;
+
+ 			@mixin mediumScreen {
+ 				outline: 1px dotted #fff;
+ 			}
  		}
 
  		&:hover {
- 			color: #d91122;
- 			border-color: #fff;
- 			background-color: #fff;
+
+ 			@mixin mediumScreen {
+	 			color: #d91122;
+	 			border-color: #fff;
+	 			background-color: #fff;
+	 		}
  		}
 
  		&__text {

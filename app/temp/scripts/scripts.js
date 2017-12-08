@@ -15,6 +15,7 @@ var DOMController = (function() {
     
     var DOMstrings = {
 		navMenu: '.menu',
+		menuButtonText: '.header__button__text',
         menuButton: '.header__button',
 		menuButtonArrowOn: 'header__button--on',
 		menuButtonArrowOff: 'header__button--off',
@@ -34,9 +35,14 @@ var MenuController = (function() {
 	var DOM = DOMController.getDOMstrings(),
 		navClass = document.querySelector(DOM.navMenu).classList,
 		menuButtonClass = document.querySelector(DOM.menuButton).classList,
+		menuButtonText = document.querySelector(DOM.menuButtonText),
 		navMenuHide = DOM.navMenuHide,
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff;
+
+	var isVisible = function(e) {
+		return !!( e.offsetWidth || e.offsetHeight );
+	}
 
 	var menuToggle = function() {
 
@@ -53,7 +59,7 @@ var MenuController = (function() {
 
 	var menuCloseOnScroll = function() {
 
-		if (navClass.contains(navMenuHide)) {
+		if (navClass.contains(navMenuHide) || isVisible(menuButtonText) === false) {
 			return
 		} else {
 			navClass.add(navMenuHide);
