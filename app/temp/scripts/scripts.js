@@ -4,7 +4,7 @@ var DOMController = (function() {
     var DOMstrings = {
 		navMenu: '.menu',
 		menuButtonText: '.header__button__text',
-        menuButton: '.header__button',
+		menuButton: '.header__button',
 		menuButtonArrowOn: 'header__button--on',
 		menuButtonArrowOff: 'header__button--off',
 		navMenuHide: 'menu--hidden',

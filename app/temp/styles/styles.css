@@ -814,3 +814,19 @@ body {
             transform: translateY(0);
     color: #fff;
 }
+
+.large-hero {
+    height: 650px;
+    overflow: hidden;
+}
+
+@media (min-width: 1025px) {
+    .large-hero {
+        height: 600px;
+    }
+}
+
+.large-hero__image {
+    display: block;
+    max-width: 100%;
+}

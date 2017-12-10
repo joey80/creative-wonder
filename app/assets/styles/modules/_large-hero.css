@@ -1,0 +1,13 @@
+.large-hero {
+	height: 650px;
+	overflow: hidden;
+
+	@mixin largeScreen {
+		height: 600px;
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+	}
+}
