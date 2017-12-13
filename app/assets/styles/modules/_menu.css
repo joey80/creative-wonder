@@ -9,21 +9,23 @@
 */
 
 .menu {
+	display: none;
 	top: 0;
 	font-family: 'Lato', sans-serif;
-	margin-top: 80px;
 	width: 100%;
 	background-color: $mainBlueColor;
 	color: rgba(255, 255, 255, 0);
 	font-size: 1rem;
 	transition: all .4s ease-out;
-	overflow: hidden;
-	z-index: 2;
+	overflow-x: hidden;
+	z-index: 1;
 
 	@mixin mediumScreen {
+		margin-top: 80px;
 		position: fixed;
+		display: block;
 		transform: translateY(0);
-		overflow: initial;
+		overflow-x: visible;
 		height: 60px;
 		font-size: 0.95rem;
 	}
@@ -31,7 +33,6 @@
 	&__list__first {
 		padding-top: 5px;
 		padding-left: 20px;
- 		grid-row: 1;
  		height: inherit;
 		cursor: pointer;
 		list-style-type: none;
@@ -40,9 +41,7 @@
 
 		@mixin mediumScreen {
 			margin: 0;
-			grid-column: 1 / 3;
 			padding-top: 25px;
-			align-self: center;
 			display: inline-flex;
 		}
 	}
@@ -72,7 +71,7 @@
 			display: none;
 			margin: 17px auto;
 			border-radius: 0 10px;
-			width: inherit;
+			width: auto;
 			min-width: 3000px;
 			margin-left: -25px;
 			text-align: left;
@@ -80,8 +79,11 @@
 	}
 
 	& ul li:hover > ul {
-		color: rgba(255, 255, 255, 0.3);
-		display: block;
+
+		@mixin mediumScreen {
+			color: rgba(255, 255, 255, 0.3);
+			display: block;
+		}
 	}
 
 	& ul ul li {
@@ -133,12 +135,10 @@
 
 	&--hidden {
 		transition: all .4s ease;
-		margin-top: -110%;
-		/*margin-top: -800px;*/
+		/*margin-top: -110%;*/
 		/*transform: translateY(-100%);*/
 
 		@mixin mediumScreen {
-			/*margin-top: -60px;*/
 			margin-top: 0;
 			transform: translateY(-100%);
 		}

@@ -23,7 +23,8 @@ var DOMController = (function() {
 var MenuController = (function() {
 
 	var DOM = DOMController.getDOMstrings(),
-		navClass = document.querySelector(DOM.navMenu).classList,             // The menu div
+		navMenu = document.querySelector(DOM.navMenu),                        // The menu div
+		navClass = document.querySelector(DOM.navMenu).classList,             // The menu div classes
 		navMenuListClass = document.querySelector(DOM.navMenuList).classList, // The menu ul
 		menuButtonClass = document.querySelector(DOM.menuButton).classList,   // The header button
 		menuButtonText = document.querySelector(DOM.menuButtonText),          // The header button text
@@ -45,14 +46,15 @@ var MenuController = (function() {
 
 		if (navClass.contains(navMenuHide)) {
 			navClass.remove(navMenuHide);
+			mobileMenuShow();
 			setTimeout(function() {
 				navMenuListClass.add(navMenuDown);
 			}, 300);
 		} else {
+			mobileMenuHide();
 			navClass.add(navMenuHide);
 			navMenuListClass.remove(navMenuDown);
 		}
-
 		addRemoveArrow();
 	};
 
@@ -67,6 +69,26 @@ var MenuController = (function() {
 			navClass.add(navMenuHide);
 			addRemoveArrow();
 			return
+		}
+	};
+
+
+	// On mobile this hides the menu. It calculates how tall the menu div is and then
+	// moves it off screen by that much
+	var mobileMenuHide = function() {
+		let mobileMenuHeight = navMenu.offsetHeight;
+		if (isVisible(menuButtonText) === false) {
+			navMenu.style.marginTop = "-" + mobileMenuHeight + "px";
+		}
+	};
+
+
+	// On mobile this will then reverse the menuHide and give the menu a margin-top
+	// of 0 again. It is probably a better idea to make a css modifer and apply that instead.
+	var mobileMenuShow = function() {
+		if (isVisible(menuButtonText) === false) {
+			navMenu.style.marginTop = "0px";
+			navMenu.style.display = "block";
 		}
 	};
 
@@ -95,6 +117,7 @@ var MenuController = (function() {
 		init: function() {
 			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
+			mobileMenuHide();
 
 			// Anything else to come
 		}

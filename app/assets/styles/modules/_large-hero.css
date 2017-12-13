@@ -1,9 +1,9 @@
 .large-hero {
-	/*margin-top: 80px;*/
 	height: 650px;
 	overflow: hidden;
 
 	@mixin largeScreen {
+		margin-top: 80px;
 		transform: translateY(-60px);
 		height: 600px;
 	}
@@ -11,5 +11,10 @@
 	&__image {
 		display: block;
 		max-width: 100%;
+		min-width: 100%;
+	}
+
+	&--hide {
+		margin-top: 80px;
 	}
 }

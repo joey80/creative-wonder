@@ -9,7 +9,7 @@
 */
 
  .header {
- 	position: fixed;
+ 	/*position: fixed;*/
  	top: 0;
  	background-color: $mainRedColor;
  	height: 80px;
@@ -17,8 +17,13 @@
 	color: #fff;
 	z-index: 3;
 
+	@mixin mediumScreen {
+		position: fixed;
+	}
+
  	&__logo {
  		height: 80px;
+ 		background-color: $mainRedColor;
  		font-size: 2.2rem;
  		font-family: 'pacificoregular';
  		padding-top: 20px;

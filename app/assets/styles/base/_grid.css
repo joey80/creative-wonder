@@ -11,6 +11,7 @@
 .grid {
 	display: flex;
 	max-width: 1170px;
+	height: inherit;
 	margin: 0 auto;
 	justify-content: space-between;
 	align-items: center;

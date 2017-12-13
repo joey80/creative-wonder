@@ -24,6 +24,8 @@ body {
 	font-family: 'PT Sans Narrow', sans-serif;
 	color: $mainFontColor;
 	background-color: $mainBackgroundColor;
+	display: flex;
+    flex-direction: column;
 }
 
 /*
