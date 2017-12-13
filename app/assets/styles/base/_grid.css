@@ -1,0 +1,40 @@
+/*
+	
+	
+// ==========================================================================
+// Grid Styles
+// ==========================================================================
+
+
+*/
+
+.grid {
+	display: flex;
+	max-width: 1170px;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+
+	&__cell {
+
+		&--full {
+			flex: none
+		}
+
+		&--half {
+			width: 50%;
+		}
+
+		&--third {
+			width: 33.3333%;
+		}
+
+		&--quarter {
+			width: 25%;
+		}
+	}
+
+	&--gutter {
+		margin: 1em 0 0 1em;
+	}
+}
