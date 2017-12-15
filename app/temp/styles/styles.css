@@ -512,7 +512,15 @@ body {
 }
 
 .grid__cell--half {
-    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+        flex: none;
+}
+
+@media (min-width: 790px) {
+    .grid__cell--half {
+        width: 50%;
+    }
 }
 
 .grid__cell--third {
@@ -847,10 +855,7 @@ body {
 .menu--hidden {
     -webkit-transition: all .4s ease;
             transition: all .4s ease;
-    /*margin-top: -110%;*/
 }
-
-/*transform: translateY(-100%);*/
 
 @media (min-width: 790px) {
     .menu--hidden {
@@ -868,17 +873,41 @@ body {
     color: #fff;
 }
 
+/*
+	
+	
+// ==========================================================================
+// Large Hero Styles
+// ==========================================================================
+
+
+*/
+
 .large-hero {
-    height: 650px;
-    overflow: hidden;
+    background-image: url("../../assets/images/large-hero--small.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    -o-border-image: url("../../assets/images/large-hero__border.png") 0 0 7 fill;
+       border-image: url("../../assets/images/large-hero__border.png") 0 0 7 fill;
+    border-image-repeat: repeat repeat;
+    border-width: 0 0 7px;
+    border-style: solid;
+    height: 500px;
+}
+
+@media (min-width: 790px) {
+    .large-hero {
+        height: 600px;
+        background-image: url("../../assets/images/large-hero--medium.jpg");
+    }
 }
 
 @media (min-width: 1025px) {
     .large-hero {
+        background-image: url("../../assets/images/large-hero--large.jpg");
         margin-top: 80px;
         -webkit-transform: translateY(-60px);
                 transform: translateY(-60px);
-        height: 600px;
     }
 }
 
@@ -886,6 +915,62 @@ body {
     display: block;
     max-width: 100%;
     min-width: 100%;
+}
+
+.large-hero__content {
+    margin-top: -90px;
+    height: 370px;
+    background-color: yellow;
+}
+
+@media (min-width: 790px) {
+    .large-hero__content {
+        margin-top: 40px;
+        height: 450px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .large-hero__content {
+        margin-top: 60px;
+        height: 500px;
+    }
+}
+
+.large-hero__ship {
+    float: right;
+    width: 400px;
+    height: 153px;
+    background-image: url("../../assets/images/large-hero__rocket--small.png");
+    background-repeat: no-repeat;
+    background-size: 400px 153px;
+    margin-right: -105px;
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+}
+
+@media (min-width: 790px) {
+    .large-hero__ship {
+        width: 500px;
+        height: 188px;
+        background-image: url("../../assets/images/large-hero__rocket--medium.png");
+        background-size: 500px 188px;
+        margin-right: -50px;
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px);
+    }
+}
+
+@media (min-width: 1025px) {
+    .large-hero__ship {
+        width: 700px;
+        height: 267px;
+        background-image: url("../../assets/images/large-hero__rocket--large.png");
+        background-size: 700px 267px;
+        margin-right: -105px;
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px);
+    }
 }
 
 .large-hero--hide {

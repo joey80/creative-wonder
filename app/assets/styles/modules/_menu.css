@@ -135,8 +135,6 @@
 
 	&--hidden {
 		transition: all .4s ease;
-		/*margin-top: -110%;*/
-		/*transform: translateY(-100%);*/
 
 		@mixin mediumScreen {
 			margin-top: 0;

@@ -23,7 +23,11 @@
 		}
 
 		&--half {
-			width: 50%;
+			flex: none;
+
+			@mixin mediumScreen {
+				width: 50%;
+			}
 		}
 
 		&--third {
