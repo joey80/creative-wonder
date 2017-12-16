@@ -1,0 +1,57 @@
+/*
+	
+	
+// ==========================================================================
+// Button Styles
+// ==========================================================================
+
+
+*/
+
+.button {
+	font-family: "PT Sans Narrow", sans-serif;
+	font-size: .9em;
+	display: inline-block;
+	margin: 10px;
+	padding: 14px 40px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid $mainRedColor;
+	background-color: #d91122;
+	border-radius: 4px;
+	box-shadow: inset 0 35px 15px rgba(227, 59, 67, 0.9);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+
+	@mixin mediumScreen {
+
+	}
+
+	@mixin largeScreen {
+
+	}
+
+	&:hover {
+		color: #d91122;
+		border: 1px solid rgba(72, 72, 72, 0.3);
+		background-color: #fff;
+		box-shadow: none;
+		text-shadow: none
+	}
+
+	&:focus {
+		outline: 1px dotted #fff;
+	}
+
+	&--small {
+
+		@mixin mediumScreen {
+
+		}
+
+		@mixin largeScreen {
+
+		}
+
+	}
+}

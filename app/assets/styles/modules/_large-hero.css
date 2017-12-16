@@ -10,13 +10,11 @@
 
 .large-hero {
 	background-image: url("../../assets/images/large-hero--small.jpg");
-	background-size: cover;
-	background-attachment: fixed;
 	border-image: url("../../assets/images/large-hero__border.png") 0 0 7 fill;
 	border-image-repeat: repeat repeat;
 	border-width: 0 0 7px;
 	border-style: solid;
-	height: 500px;
+	height: 550px;
 
 	@mixin mediumScreen {
 		height: 600px;

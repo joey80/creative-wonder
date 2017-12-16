@@ -27,11 +27,13 @@
 	&__cell {
 
 		&--full {
-			flex: none
+			flex: none;
+			width: 100%;
 		}
 
 		&--half {
 			flex: none;
+			width: 100%;
 
 			@mixin mediumScreen {
 				width: 50%;
