@@ -36,9 +36,11 @@
 	}
 
 	&__content {
+		color: #fff;
 		margin-top: -90px;
 		height: 370px;
-		background-color: yellow;
+		font-size: 1em;
+		line-height: 1.7em;
 
 		@mixin mediumScreen {
 			margin-top: 40px;
@@ -48,34 +50,49 @@
 		@mixin largeScreen {
 			margin-top: 60px;
 			height: 500px;
+			font-size: 1.22em;
+			line-height: 1.6em;
+		}
+
+		&__title {
+			font-size: 1.3em;
+			font-weight: 800;
+			line-height: 1.1em;
+			display: inline-block;
+			margin-bottom: 3px;
+
+			@mixin mediumScreen {
+				font-size: 1.45em;
+			}
+
+			@mixin largeScreen {
+				font-size: 1.8em;
+			}
 		}
 	}
 
 	&__ship {
 		float: right;
-		width: 400px;
+		width: 314px;
 		height: 153px;
-		background-image: url("../../assets/images/large-hero__rocket--small.png");
+		background-image: url("../../assets/images/large-hero__rocket--small@2x.png");
 		background-repeat: no-repeat;
-		background-size: 400px 153px;
-		margin-right: -105px;
+		background-size: 314px 153px;
 		transform: translateY(-80px);
 
 		@mixin mediumScreen {
-			width: 500px;
+			width: 446px;
 			height: 188px;
-			background-image: url("../../assets/images/large-hero__rocket--medium.png");
-			background-size: 500px 188px;
-			margin-right: -50px;
+			background-image: url("../../assets/images/large-hero__rocket--medium@2x.png");
+			background-size: 446px 188px;
 			transform: translateY(-80px);
 		}
 
 		@mixin largeScreen {
-			width: 700px;
+			width: 560px;
 			height: 267px;
-			background-image: url("../../assets/images/large-hero__rocket--large.png");
-			background-size: 700px 267px;
-			margin-right: -105px;
+			background-image: url("../../assets/images/large-hero__rocket--large@2x.png");
+			background-size: 560px 267px;
 			transform: translateY(-100px);
 		}
 	}

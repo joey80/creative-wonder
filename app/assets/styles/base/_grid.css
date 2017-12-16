@@ -16,6 +16,14 @@
 	justify-content: space-between;
 	align-items: center;
 
+	&--padded {
+		padding: 0 10px 0 10px;
+
+		@mixin largeScreen {
+			padding: 0;
+		}
+	}
+
 	&__cell {
 
 		&--full {

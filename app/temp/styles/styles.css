@@ -465,6 +465,8 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
         flex-direction: column;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
 /*
@@ -503,6 +505,16 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
+
+.grid--padded {
+    padding: 0 10px 0 10px;
+}
+
+@media (min-width: 1025px) {
+    .grid--padded {
+        padding: 0;
+    }
 }
 
 .grid__cell--full {
@@ -546,7 +558,6 @@ body {
 */
 
 .header {
-    /*position: fixed;*/
     top: 0;
     background-color: #e33b43;
     height: 80px;
@@ -568,6 +579,7 @@ body {
     font-family: 'pacificoregular';
     padding-top: 20px;
     padding-left: 10px;
+    line-height: 1.2em;
 }
 
 @media (min-width: 790px) {
@@ -592,11 +604,12 @@ body {
 @media (min-width: 790px) {
     .header__tagline {
         display: block;
-        margin-top: -5px;
+        margin-top: -2px;
         margin-left: 50px;
         font-family: "PT Sans Narrow", sans-serif;
         font-size: .75rem;
         letter-spacing: .12em;
+        line-height: 0;
     }
 }
 
@@ -918,9 +931,11 @@ body {
 }
 
 .large-hero__content {
+    color: #fff;
     margin-top: -90px;
     height: 370px;
-    background-color: yellow;
+    font-size: 1em;
+    line-height: 1.7em;
 }
 
 @media (min-width: 790px) {
@@ -934,28 +949,48 @@ body {
     .large-hero__content {
         margin-top: 60px;
         height: 500px;
+        font-size: 1.22em;
+        line-height: 1.6em;
+    }
+}
+
+.large-hero__content__title {
+    font-size: 1.3em;
+    font-weight: 800;
+    line-height: 1.1em;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+@media (min-width: 790px) {
+    .large-hero__content__title {
+        font-size: 1.45em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .large-hero__content__title {
+        font-size: 1.8em;
     }
 }
 
 .large-hero__ship {
     float: right;
-    width: 400px;
+    width: 314px;
     height: 153px;
-    background-image: url("../../assets/images/large-hero__rocket--small.png");
+    background-image: url("../../assets/images/large-hero__rocket--small@2x.png");
     background-repeat: no-repeat;
-    background-size: 400px 153px;
-    margin-right: -105px;
+    background-size: 314px 153px;
     -webkit-transform: translateY(-80px);
             transform: translateY(-80px);
 }
 
 @media (min-width: 790px) {
     .large-hero__ship {
-        width: 500px;
+        width: 446px;
         height: 188px;
-        background-image: url("../../assets/images/large-hero__rocket--medium.png");
-        background-size: 500px 188px;
-        margin-right: -50px;
+        background-image: url("../../assets/images/large-hero__rocket--medium@2x.png");
+        background-size: 446px 188px;
         -webkit-transform: translateY(-80px);
                 transform: translateY(-80px);
     }
@@ -963,11 +998,10 @@ body {
 
 @media (min-width: 1025px) {
     .large-hero__ship {
-        width: 700px;
+        width: 560px;
         height: 267px;
-        background-image: url("../../assets/images/large-hero__rocket--large.png");
-        background-size: 700px 267px;
-        margin-right: -105px;
+        background-image: url("../../assets/images/large-hero__rocket--large@2x.png");
+        background-size: 560px 267px;
         -webkit-transform: translateY(-100px);
                 transform: translateY(-100px);
     }
