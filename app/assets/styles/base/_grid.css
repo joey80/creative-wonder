@@ -10,6 +10,7 @@
 
 .grid {
 	display: flex;
+	flex-direction: row;
 	max-width: 1170px;
 	height: inherit;
 	margin: 0 auto;
@@ -27,16 +28,17 @@
 	&__cell {
 
 		&--full {
-			flex: none;
-			width: 100%;
+			display: flex;
+			flex: 1 100%;
 		}
 
 		&--half {
-			flex: none;
-			width: 100%;
+			flex: 1;
+			flex-basis: 100%;
 
 			@mixin mediumScreen {
-				width: 50%;
+				max-width: 50%;
+				flex: 1;
 			}
 		}
 
@@ -47,9 +49,21 @@
 		&--quarter {
 			width: 25%;
 		}
+
+		&--center {
+			justify-content: center;
+		}
 	}
 
 	&--gutter {
 		margin: 1em 0 0 1em;
+	}
+
+	&--wrap {
+		flex-wrap: wrap;
+
+		@mixin mediumScreen {
+			flex-wrap: nowrap;
+		}
 	}
 }

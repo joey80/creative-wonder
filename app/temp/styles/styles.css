@@ -496,6 +496,10 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
     max-width: 1170px;
     height: inherit;
     margin: 0 auto;
@@ -518,22 +522,28 @@ body {
 }
 
 .grid__cell--full {
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-        flex: none;
-    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 100%;
+        flex: 1 100%;
 }
 
 .grid__cell--half {
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-        flex: none;
-    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+        flex: 1;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
 }
 
 @media (min-width: 790px) {
     .grid__cell--half {
-        width: 50%;
+        max-width: 50%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     }
 }
 
@@ -545,8 +555,26 @@ body {
     width: 25%;
 }
 
+.grid__cell--center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
 .grid--gutter {
     margin: 1em 0 0 1em;
+}
+
+.grid--wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+@media (min-width: 790px) {
+    .grid--wrap {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    }
 }
 
 /*
@@ -1061,4 +1089,45 @@ body {
 
 .large-hero--hide {
     margin-top: 80px;
+}
+
+/*
+	
+	
+// ==========================================================================
+// Intro Styles
+// ==========================================================================
+
+
+*/
+
+.intro__title {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 1.5em;
+    padding: 30px 0 30px 0;
+}
+
+@media (min-width: 790px) {
+    .intro__title {
+        font-size: 2.8em;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1025px) {
+}
+
+.intro__content {
+    font-size: 1em;
+    line-height: 1.7em;
+}
+
+@media (min-width: 790px) {
+}
+
+@media (min-width: 1025px) {
+    .intro__content {
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
 }
