@@ -469,18 +469,22 @@ body {
     line-height: 1.5em;
 }
 
-/*
-.wrapper {
-	max-width: 1170px;
-	height: inherit;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
-	display: flex;
-	border: 1px solid #000;
+a:link {
+    text-decoration: underline;
+    color: #d91122;
 }
-*/
+
+a:visited {
+    color: #d91122;
+}
+
+a:active {
+    color: #d91122;
+}
+
+a:hover {
+    background-color: #f7cacc;
+}
 
 /*
 	
@@ -500,7 +504,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
         flex-direction: row;
-    max-width: 1170px;
+    max-width: 96%;
     height: inherit;
     margin: 0 auto;
     -webkit-box-pack: justify;
@@ -511,14 +515,14 @@ body {
     align-items: center;
 }
 
-.grid--padded {
-    padding: 0 10px 0 10px;
+@media (min-width: 1025px) {
+    .grid {
+        max-width: 1170px;
+    }
 }
 
-@media (min-width: 1025px) {
-    .grid--padded {
-        padding: 0;
-    }
+.grid__cell {
+    padding: 20px;
 }
 
 .grid__cell--full {
@@ -548,7 +552,22 @@ body {
 }
 
 .grid__cell--third {
-    width: 33.3333%;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+@media (min-width: 790px) {
+    .grid__cell--third {
+        margin-bottom: 0;
+        width: 33.3333%;
+        margin: 1%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .grid__cell--third {
+        margin: 1.69%;
+    }
 }
 
 .grid__cell--quarter {
@@ -559,6 +578,10 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+
+.grid__cell--no-padding {
+    padding: 0;
 }
 
 .grid--gutter {
@@ -575,6 +598,10 @@ body {
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
     }
+}
+
+.grid--gutter-bottom {
+    margin-bottom: 160px;
 }
 
 /*
@@ -602,12 +629,8 @@ body {
     -webkit-box-shadow: inset 0 35px 15px rgba(227, 59, 67, .9);
             box-shadow: inset 0 35px 15px rgba(227, 59, 67, .9);
     text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
-}
-
-@media (min-width: 790px) {
-}
-
-@media (min-width: 1025px) {
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
 }
 
 .button:hover {
@@ -621,6 +644,10 @@ body {
 
 .button:focus {
     outline: 1px dotted #fff;
+}
+
+.button--small {
+    padding: 7px 20px;
 }
 
 @media (min-width: 790px) {
@@ -842,7 +869,7 @@ body {
 @media (min-width: 790px) {
     .menu__list__first {
         margin: 0;
-        padding-top: 25px;
+        padding-top: 20px;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
@@ -876,7 +903,7 @@ body {
     .menu ul ul {
         position: absolute;
         display: none;
-        margin: 17px auto;
+        margin: 9px auto;
         border-radius: 0 10px;
         width: auto;
         min-width: 3000px;
@@ -985,7 +1012,7 @@ body {
     border-image-repeat: repeat repeat;
     border-width: 0 0 7px;
     border-style: solid;
-    height: 550px;
+    height: 630px;
 }
 
 @media (min-width: 790px) {
@@ -1012,7 +1039,7 @@ body {
 
 .large-hero__content {
     color: #fff;
-    margin-top: -90px;
+    margin-top: -210px;
     height: 370px;
     font-size: 1em;
     line-height: 1.7em;
@@ -1020,6 +1047,7 @@ body {
 
 @media (min-width: 790px) {
     .large-hero__content {
+        font-size: 1em;
         margin-top: 40px;
         height: 450px;
     }
@@ -1027,7 +1055,6 @@ body {
 
 @media (min-width: 1025px) {
     .large-hero__content {
-        margin-top: 60px;
         height: 500px;
         font-size: 1.22em;
         line-height: 1.6em;
@@ -1103,18 +1130,15 @@ body {
 
 .intro__title {
     font-family: 'Homemade Apple', cursive;
-    font-size: 1.5em;
+    font-size: 1.35em;
     padding: 30px 0 30px 0;
 }
 
 @media (min-width: 790px) {
     .intro__title {
-        font-size: 2.8em;
+        font-size: 2.4em;
         padding: 40px;
     }
-}
-
-@media (min-width: 1025px) {
 }
 
 .intro__content {
@@ -1122,12 +1146,131 @@ body {
     line-height: 1.7em;
 }
 
-@media (min-width: 790px) {
-}
-
 @media (min-width: 1025px) {
     .intro__content {
         font-size: 1.1em;
         line-height: 1.6em;
     }
+}
+
+.intro__video iframe {
+    vertical-align: top;
+    border: 0;
+    height: 300px;
+    min-width: 100%;
+}
+
+/*
+	
+	
+// ==========================================================================
+// Chalkboard Styles
+// ==========================================================================
+
+
+*/
+
+.chalkboard {
+    border-image-source: url("../../assets/images/chalkboard__wood.png");
+    border-image-slice: 27 27 27 27;
+    border-image-width: 15px 0 15px 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: repeat repeat;
+    background-image: url("../../assets/images/chalkboard__bg.jpg");
+    background-attachment: fixed;
+    padding-top: 80px;
+}
+
+.chalkboard__title {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 1.35em;
+    padding: 30px 0 30px 0;
+    color: #fff;
+}
+
+@media (min-width: 790px) {
+    .chalkboard__title {
+        font-size: 2.4em;
+        padding: 40px;
+    }
+}
+
+.chalkboard__card {
+    background-color: #fff;
+    height: 400px;
+}
+
+.chalkboard__card__title {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.3em;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.chalkboard__card__content {
+    margin: 0;
+    padding: 10px;
+    font-size: .85em;
+    line-height: 1.5em;
+}
+
+@media (min-width: 790px) {
+    .chalkboard__card__content {
+        font-size: .75em;
+        line-height: 1.5em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .chalkboard__card__content {
+        font-size: .85em;
+        line-height: 1.5em;
+    }
+}
+
+.chalkboard__card__image-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.chalkboard__card__image {
+    line-height: 150px;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    background-size: cover;
+    background-image: url("http://images.eurogamer.net/2017/articles/1/8/8/7/1/7/8/zelda-breath-of-the-wild-walkthrough-guide-tips-4857-148829841233.jpg");
+    -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+    overflow: hidden;
+}
+
+.chalkboard__card__image:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+
+.chalkboard__card__overlay {
+    opacity: 0;
+    background: rgba(255, 255, 255, .6);
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.chalkboard__card__overlay:hover {
+    opacity: 1;
+}
+
+.chalkboard__card hr {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    opacity: .6;
+    height: 1px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, .75)), to(rgba(0, 0, 0, 0)));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
 }

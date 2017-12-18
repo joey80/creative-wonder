@@ -41,7 +41,7 @@
 
 		@mixin mediumScreen {
 			margin: 0;
-			padding-top: 25px;
+			padding-top: 20px;
 			display: inline-flex;
 		}
 	}
@@ -69,7 +69,7 @@
 		@mixin mediumScreen {
 			position: absolute;
 			display: none;
-			margin: 17px auto;
+			margin: 9px auto;
 			border-radius: 0 10px;
 			width: auto;
 			min-width: 3000px;

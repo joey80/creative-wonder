@@ -30,15 +30,19 @@ body {
     line-height: 1.5em;
 }
 
-/*
-.wrapper {
-	max-width: 1170px;
-	height: inherit;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
-	display: flex;
-	border: 1px solid #000;
+a:link {
+	text-decoration: underline;
+    color: #d91122;
 }
-*/
+
+a:visited {
+	color: #d91122;
+}
+
+a:active {
+	color: #d91122;
+}
+
+a:hover {
+	background-color: #f7cacc;
+}

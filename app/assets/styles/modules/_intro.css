@@ -12,16 +12,12 @@
 
 	&__title {
 		font-family: 'Homemade Apple', cursive;
-		font-size: 1.5em;
+		font-size: 1.35em;
 		padding: 30px 0px 30px 0px;
 
 		@mixin mediumScreen {
-			font-size: 2.8em;
+			font-size: 2.4em;
 			padding: 40px;
-		}
-
-		@mixin largeScreen {
-
 		}
 	}
 
@@ -29,13 +25,16 @@
 		font-size: 1em;
 		line-height: 1.7em;
 
-		@mixin mediumScreen {
-
-		}
-
 		@mixin largeScreen {
 			font-size: 1.1em;
 			line-height: 1.6em;
 		}
+	}
+
+	&__video iframe {
+		vertical-align: top;
+		border: 0;
+		height: 300px;
+		min-width: 100%;
 	}
 }

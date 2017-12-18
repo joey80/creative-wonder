@@ -14,7 +14,7 @@
 	border-image-repeat: repeat repeat;
 	border-width: 0 0 7px;
 	border-style: solid;
-	height: 550px;
+	height: 630px;
 
 	@mixin mediumScreen {
 		height: 600px;
@@ -35,18 +35,18 @@
 
 	&__content {
 		color: #fff;
-		margin-top: -90px;
+		margin-top: -210px;
 		height: 370px;
 		font-size: 1em;
 		line-height: 1.7em;
 
 		@mixin mediumScreen {
+			font-size: 1em;
 			margin-top: 40px;
 			height: 450px;
 		}
 
 		@mixin largeScreen {
-			margin-top: 60px;
 			height: 500px;
 			font-size: 1.22em;
 			line-height: 1.6em;
