@@ -470,8 +470,10 @@ body {
 }
 
 a:link {
-    text-decoration: underline;
+    text-decoration: none;
     color: #d91122;
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
 }
 
 a:visited {
@@ -484,6 +486,7 @@ a:active {
 
 a:hover {
     background-color: #f7cacc;
+    text-decoration: underline;
 }
 
 /*
@@ -601,7 +604,13 @@ a:hover {
 }
 
 .grid--gutter-bottom {
-    margin-bottom: 160px;
+    margin-bottom: 80px;
+}
+
+@media (min-width: 790px) {
+    .grid--gutter-bottom {
+        margin-bottom: 160px;
+    }
 }
 
 /*
@@ -1128,6 +1137,16 @@ a:hover {
 
 */
 
+.intro {
+    margin-top: 80px;
+}
+
+@media (min-width: 790px) {
+    .intro {
+        margin-top: 0;
+    }
+}
+
 .intro__title {
     font-family: 'Homemade Apple', cursive;
     font-size: 1.35em;
@@ -1243,10 +1262,21 @@ a:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     background-size: cover;
-    background-image: url("http://images.eurogamer.net/2017/articles/1/8/8/7/1/7/8/zelda-breath-of-the-wild-walkthrough-guide-tips-4857-148829841233.jpg");
     -webkit-transition: all .2s ease;
             transition: all .2s ease;
     overflow: hidden;
+}
+
+.chalkboard__card__image--one {
+    background-image: url("../../assets/images/card__image__bg--one.jpg");
+}
+
+.chalkboard__card__image--two {
+    background-image: url("../../assets/images/card__image__bg--two.jpg");
+}
+
+.chalkboard__card__image--three {
+    background-image: url("../../assets/images/card__image__bg--three.jpg");
 }
 
 .chalkboard__card__image:hover {

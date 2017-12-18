@@ -72,9 +72,20 @@
 			text-align: center;
 			transform: scale(1.1);
 			background-size: cover;
-			background-image: url("http://images.eurogamer.net/2017/articles/1/8/8/7/1/7/8/zelda-breath-of-the-wild-walkthrough-guide-tips-4857-148829841233.jpg");
 			transition: all .2s ease;
 			overflow: hidden;
+
+			&--one {
+				background-image: url("../../assets/images/card__image__bg--one.jpg");
+			}
+
+			&--two {
+				background-image: url("../../assets/images/card__image__bg--two.jpg");
+			}
+
+			&--three {
+				background-image: url("../../assets/images/card__image__bg--three.jpg");
+			}
 
 			&:hover {
 				transform: scale(1);

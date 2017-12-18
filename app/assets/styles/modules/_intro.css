@@ -9,6 +9,11 @@
 */
 
 .intro {
+	margin-top: 80px;
+
+	@mixin mediumScreen {
+		margin-top: 0;
+	}
 
 	&__title {
 		font-family: 'Homemade Apple', cursive;

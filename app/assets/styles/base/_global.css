@@ -31,8 +31,9 @@ body {
 }
 
 a:link {
-	text-decoration: underline;
+	text-decoration: none;
     color: #d91122;
+    transition: all 0.2s linear;
 }
 
 a:visited {
@@ -45,4 +46,5 @@ a:active {
 
 a:hover {
 	background-color: #f7cacc;
+	text-decoration: underline;
 }

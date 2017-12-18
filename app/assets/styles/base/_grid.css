@@ -80,6 +80,10 @@
 	}
 
 	&--gutter-bottom {
-		margin-bottom: 160px;
+		margin-bottom: 80px;
+
+		@mixin mediumScreen {
+			margin-bottom: 160px;
+		}
 	}
 }
