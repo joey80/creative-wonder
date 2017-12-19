@@ -9,7 +9,8 @@ var DOMController = (function() {
 		menuButtonArrowOff: 'header__button--off',
 		navMenuHide: 'menu--hidden',
 		navMenuDown: 'menu--down',
-		navMenuList: '.menu__list__first'
+		navMenuList: '.menu__list__first',
+		cbAccordion: '.chalkboard__accordion'
 	};
 
 	return {
@@ -31,7 +32,8 @@ var MenuController = (function() {
 		navMenuHide = DOM.navMenuHide,
 		navMenuDown = DOM.navMenuDown,
 		arrowOn = DOM.menuButtonArrowOn,
-		arrowOff = DOM.menuButtonArrowOff;
+		arrowOff = DOM.menuButtonArrowOff,
+		cbAccordion = '$('+DOM.cbAccordion+')';
 
 
     // Helper function to check to see if something is visible
@@ -106,6 +108,14 @@ var MenuController = (function() {
 	};
 
 
+	var accordionControl = function() {
+		$('.chalkboard__accordion').accordion({
+			collapsible: true,
+			heightStyle: "content"
+		});
+	};
+
+
 	// Sets up all of the event listener for the header and menu DOM items
 	var setupEventListeners = function() {
 		
@@ -118,6 +128,7 @@ var MenuController = (function() {
 			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
 			mobileMenuHide();
+			accordionControl();
 
 			// Anything else to come
 		}

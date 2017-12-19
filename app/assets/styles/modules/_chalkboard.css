@@ -104,4 +104,58 @@
 			box-shadow: 0 14px 28px rgba(10, 10, 10, 1), 0 10px 10px rgba(10, 10, 10, 0.22);
 		}
 	}
+
+	&__accordion {
+		line-height: 1.7em;
+		font-size: 1.1em;
+		width: 100%;
+
+		&__question {
+			width: inherit;
+			display: block;
+			padding: 10px;
+			margin-bottom: 10px;
+			text-transform: capitalize;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&:nth-of-type(1) {
+				background-color: #e33b43;
+				color: #e4f1fe;
+				margin-top: 20px;
+			}
+			
+			&:nth-of-type(2) {
+				background-color: #2ef2f2;
+				color: #34495e;
+			}
+			
+			&:nth-of-type(3) {
+				background-color: #b6ec64;
+				color: #3e3e3e;
+			}
+
+			&:nth-of-type(4) {
+				background-color: #f2a341;
+				color: #3b0053;
+			}
+
+			&:nth-of-type(5) {
+				background-color: #c37cf5;
+				color: #1d0029;
+			}
+		}
+
+		&__answer {
+			color: #fff;
+			padding: 10px;
+			font-size: 0.8em;
+
+			@mixin mediumScreen {
+				
+			}
+		}
+	}
 }
