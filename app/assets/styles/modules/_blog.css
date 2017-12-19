@@ -1,0 +1,48 @@
+/*
+	
+	
+// ==========================================================================
+// Blog Styles
+// ==========================================================================
+
+
+*/
+
+.blog {
+
+	&__card {
+		background-image: url("../../assets/images/blog__card__bg.png");
+		height: 500px;
+		padding: 12px;
+
+		&__image {
+			width: 240px;
+			height: 240px;
+			margin: 10px;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			overflow: hidden;
+		}
+
+		&__date {
+			font-size: 1.4em;
+			font-weight: bold;
+			padding: 10px 0 10px 0;
+			color: #d91122;
+			text-align: left;
+		}
+
+		&__title {
+			font-size: 1.6em;
+			font-weight: bold;
+			padding: 2px 16px 0 0;
+			text-transform: uppercase;
+			color: #222;
+			text-align: left;
+		}
+
+		&__content {
+
+		}
+	}
+}

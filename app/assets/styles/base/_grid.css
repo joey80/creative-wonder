@@ -22,7 +22,7 @@
 	}
 
 	&__cell {
-		padding: 20px;
+		margin: 12px;
 
 		&--full {
 			display: flex;
@@ -46,11 +46,11 @@
 			@mixin mediumScreen {
 				margin-bottom: 0;
 				width: 33.3333%;
-				margin: 1%;
+				/*margin: 1%;*/
 			}
 
 			@mixin largeScreen {
-				margin: 1.69%;
+				/*margin: 1.69%;*/
 			}
 		}
 
@@ -60,10 +60,6 @@
 
 		&--center {
 			justify-content: center;
-		}
-
-		&--no-padding {
-			padding: 0;
 		}
 	}
 
@@ -85,5 +81,9 @@
 		@mixin mediumScreen {
 			margin-bottom: 160px;
 		}
+	}
+
+	&--top {
+		align-items: flex-start;
 	}
 }

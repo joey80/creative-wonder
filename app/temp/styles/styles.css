@@ -489,6 +489,33 @@ a:hover {
     text-decoration: underline;
 }
 
+.title {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 1.35em;
+    padding: 30px 0 30px 0;
+}
+
+@media (min-width: 790px) {
+    .title {
+        font-size: 2.4em;
+        padding: 40px;
+    }
+}
+
+.title--white {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 1.35em;
+    padding: 30px 0 30px 0;
+    color: #fff;
+}
+
+@media (min-width: 790px) {
+    .title--white {
+        font-size: 2.4em;
+        padding: 40px;
+    }
+}
+
 /*
 	
 	
@@ -525,7 +552,7 @@ a:hover {
 }
 
 .grid__cell {
-    padding: 20px;
+    margin: 12px;
 }
 
 .grid__cell--full {
@@ -563,13 +590,13 @@ a:hover {
     .grid__cell--third {
         margin-bottom: 0;
         width: 33.3333%;
-        margin: 1%;
+        /*margin: 1%;*/
     }
 }
 
 @media (min-width: 1025px) {
     .grid__cell--third {
-        margin: 1.69%;
+        /*margin: 1.69%;*/
     }
 }
 
@@ -581,10 +608,6 @@ a:hover {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-}
-
-.grid__cell--no-padding {
-    padding: 0;
 }
 
 .grid--gutter {
@@ -611,6 +634,12 @@ a:hover {
     .grid--gutter-bottom {
         margin-bottom: 160px;
     }
+}
+
+.grid--top {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 
 /*
@@ -1147,19 +1176,6 @@ a:hover {
     }
 }
 
-.intro__title {
-    font-family: 'Homemade Apple', cursive;
-    font-size: 1.35em;
-    padding: 30px 0 30px 0;
-}
-
-@media (min-width: 790px) {
-    .intro__title {
-        font-size: 2.4em;
-        padding: 40px;
-    }
-}
-
 .intro__content {
     font-size: 1em;
     line-height: 1.7em;
@@ -1176,7 +1192,7 @@ a:hover {
     vertical-align: top;
     border: 0;
     height: 300px;
-    min-width: 100%;
+    min-width: 95%;
 }
 
 /*
@@ -1198,20 +1214,7 @@ a:hover {
     background-image: url("../../assets/images/chalkboard__bg.jpg");
     background-attachment: fixed;
     padding-top: 80px;
-}
-
-.chalkboard__title {
-    font-family: 'Homemade Apple', cursive;
-    font-size: 1.35em;
-    padding: 30px 0 30px 0;
-    color: #fff;
-}
-
-@media (min-width: 790px) {
-    .chalkboard__title {
-        font-size: 2.4em;
-        padding: 40px;
-    }
+    padding-bottom: 80px;
 }
 
 .chalkboard__card {
@@ -1303,4 +1306,54 @@ a:hover {
     height: 1px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, .75)), to(rgba(0, 0, 0, 0)));
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
+}
+
+.chalkboard__card:hover {
+    -webkit-box-shadow: 0 14px 28px rgba(10, 10, 10, 1), 0 10px 10px rgba(10, 10, 10, .22);
+            box-shadow: 0 14px 28px rgba(10, 10, 10, 1), 0 10px 10px rgba(10, 10, 10, .22);
+}
+
+/*
+	
+	
+// ==========================================================================
+// Blog Styles
+// ==========================================================================
+
+
+*/
+
+.blog__card {
+    background-image: url("../../assets/images/blog__card__bg.png");
+    height: 500px;
+    padding: 12px;
+}
+
+.blog__card__image {
+    width: 240px;
+    height: 240px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    overflow: hidden;
+}
+
+.blog__card__date {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+    color: #d91122;
+    text-align: left;
+}
+
+.blog__card__title {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 2px 16px 0 0;
+    text-transform: uppercase;
+    color: #222;
+    text-align: left;
+}
+
+.blog__card__content {
 }
