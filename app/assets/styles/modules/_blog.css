@@ -13,15 +13,28 @@
 	&__card {
 		background-image: url("../../assets/images/blog__card__bg.png");
 		height: 500px;
-		padding: 12px;
+		padding: 18px;
 
 		&__image {
-			width: 240px;
-			height: 240px;
+			float: left;
+			width: 130px;
+			height: 130px;
 			margin: 10px;
 			border-radius: 50%;
 			border: 3px solid #fff;
 			overflow: hidden;
+
+			@mixin mediumScreen {
+				width: 140px;
+				height: 140px;
+				margin: 10px;
+			}
+
+			@mixin largeScreen {
+				width: 240px;
+				height: 240px;
+				margin: 10px;
+			}
 		}
 
 		&__date {
@@ -30,19 +43,39 @@
 			padding: 10px 0 10px 0;
 			color: #d91122;
 			text-align: left;
+
+			@mixin mediumScreen {
+				font-size: 1.2em;
+			}
+
+			@mixin largeScreen {
+				font-size: 1.4em;
+			}
 		}
 
 		&__title {
 			font-size: 1.6em;
 			font-weight: bold;
-			padding: 2px 16px 0 0;
 			text-transform: uppercase;
 			color: #222;
 			text-align: left;
+
+			@mixin mediumScreen {
+				font-size: 1.2em;
+			}
+
+			@mixin largeScreen {
+				padding-top: 2px;
+				font-size: 1.6em;
+			}
 		}
 
 		&__content {
 
+			@mixin largeScreen {
+				line-height: 1.7em;
+				font-size: 1.1em;
+			}
 		}
 	}
 }

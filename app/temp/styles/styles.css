@@ -1326,16 +1326,33 @@ a:hover {
 .blog__card {
     background-image: url("../../assets/images/blog__card__bg.png");
     height: 500px;
-    padding: 12px;
+    padding: 18px;
 }
 
 .blog__card__image {
-    width: 240px;
-    height: 240px;
+    float: left;
+    width: 130px;
+    height: 130px;
     margin: 10px;
     border-radius: 50%;
     border: 3px solid #fff;
     overflow: hidden;
+}
+
+@media (min-width: 790px) {
+    .blog__card__image {
+        width: 140px;
+        height: 140px;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .blog__card__image {
+        width: 240px;
+        height: 240px;
+        margin: 10px;
+    }
 }
 
 .blog__card__date {
@@ -1346,14 +1363,42 @@ a:hover {
     text-align: left;
 }
 
+@media (min-width: 790px) {
+    .blog__card__date {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .blog__card__date {
+        font-size: 1.4em;
+    }
+}
+
 .blog__card__title {
     font-size: 1.6em;
     font-weight: bold;
-    padding: 2px 16px 0 0;
     text-transform: uppercase;
     color: #222;
     text-align: left;
 }
 
-.blog__card__content {
+@media (min-width: 790px) {
+    .blog__card__title {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .blog__card__title {
+        padding-top: 2px;
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .blog__card__content {
+        line-height: 1.7em;
+        font-size: 1.1em;
+    }
 }
