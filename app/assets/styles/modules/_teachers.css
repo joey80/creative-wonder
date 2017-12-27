@@ -12,9 +12,11 @@
 	background-image: url("../../assets/images/teachers__bg.jpg");
 	background-attachment: fixed;
 	padding: 80px 0 40px 0;
+	overflow: hidden;
+	color: #fff;
 
 	&__card {
-		width: 100%;
+		min-width: 100%;
 		text-align: center;
 		color: #fff;
 
@@ -72,4 +74,12 @@
 		background-color: transparent;
 		text-decoration: underline;
 	}
+}
+
+.teacherLeft {
+	cursor: pointer;
+}
+
+.teacherRight {
+	cursor: pointer;
 }

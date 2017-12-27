@@ -1352,6 +1352,10 @@ a:hover {
     color: #fff;
     padding: 10px;
     font-size: .8em;
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
+    max-height: 0;
+    overflow: hidden;
 }
 
 @media (min-width: 790px) {
@@ -1462,10 +1466,12 @@ a:hover {
     background-image: url("../../assets/images/teachers__bg.jpg");
     background-attachment: fixed;
     padding: 80px 0 40px 0;
+    overflow: hidden;
+    color: #fff;
 }
 
 .teachers__card {
-    width: 100%;
+    min-width: 100%;
     text-align: center;
     color: #fff;
 }
@@ -1525,4 +1531,12 @@ a:hover {
 .teachers a:hover {
     background-color: transparent;
     text-decoration: underline;
+}
+
+.teacherLeft {
+    cursor: pointer;
+}
+
+.teacherRight {
+    cursor: pointer;
 }
