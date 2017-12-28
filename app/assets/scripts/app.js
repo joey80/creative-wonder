@@ -141,12 +141,10 @@ var MenuController = (function() {
 
 	var divSliderLeft = function() {
 
-		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 20)) {
+		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 4)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
   		} else {
-    		total -= teacherCardWidth;
-    		//console.log("Total: " + total);
-    		//console.log("Container: " + teacherCardContainerWidth);
+    		total -= (teacherCardWidth + 4);
     		var cssSelector = anime({
       			targets: teacherCardContainer,
       			translateX: total
@@ -160,7 +158,7 @@ var MenuController = (function() {
 		if(total === 0) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
   		} else {
-      		total += teacherCardWidth;
+      		total += (teacherCardWidth + 4);
       		var cssSelector = anime({
      	 		targets: teacherCardContainer,
       			translateX: total
