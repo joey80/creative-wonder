@@ -1472,6 +1472,7 @@ a:hover {
 
 .teachers__card {
     display: inline-block;
+    float: left;
     width: 350px;
     height: 600px;
     text-align: center;
@@ -1537,7 +1538,7 @@ a:hover {
 }
 
 .teachers__card__image {
-    display: block;
+    display: inline-block;
     width: 175px;
     height: 175px;
     border: 5px solid #fff;
@@ -1599,7 +1600,7 @@ a:hover {
 .teachers__card__content {
     margin: 10px auto;
     padding: 5px 15px 5px 15px;
-    width: 90%;
+    width: 98%;
     background-color: rgba(255, 255, 255, .2);
     font-size: 1em;
     line-height: 1.5em;
