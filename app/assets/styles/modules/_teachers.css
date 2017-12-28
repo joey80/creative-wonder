@@ -17,33 +17,70 @@
 
 	&__card {
 		display: inline-block;
-		width: 1200px;
-		height: 800px;
+		width: 350px;
+		height: 600px;
 		text-align: center;
 		color: #fff;
 
-		&__container { /* THIS SHOULD HOLD ALL OF THE TEACHERS */
-			height: 800px;
-			width: 6100px;
+		@mixin mediumScreen {
+			width: 800px;
+			height: 600px;
 		}
 
-		&__window { /* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS WILL BE VISIBLE*/
-			margin: auto;
+		@mixin largeScreen {
 			width: 1200px;
 			height: 800px;
+		}
+
+		/* THIS HOLDS ALL OF THE TEACHER CARDS */
+		&__container {
+			height: 600px;
+			width: 1770px;
+
+			@mixin mediumScreen {
+				height: 600px;
+				width: 4020px;
+			}
+
+			@mixin largeScreen {
+				height: 800px;
+				width: 6020px;
+			}
+		}
+
+		/* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS ARE VISIBLE */
+		&__window {
+			margin: auto;
+			width: 350px;
+			height: 600px;
 			overflow: hidden;
+
+			@mixin mediumScreen {
+				width: 800px;
+				height: 600px;
+			}
+
+			@mixin largeScreen {
+				width: 1200px;
+				height: 800px;
+			}
 		}
 
 		&__image {
 			display: block;
-			width: 250px;
-			height: 250px;
+			width: 175px;
+			height: 175px;
 			border: 5px solid #fff;
 			margin: 0 auto 20px auto;
 			border-radius: 50%;
 			overflow: hidden;
 
 			@mixin mediumScreen {
+				width: 200px;
+				height: 200px;
+			}
+
+			@mixin largeScreen {
 				width: 300px;
 				height: 300px;
 			}
@@ -53,20 +90,47 @@
 			font-weight: 800;
 			font-size: 1.8em;
 			padding-bottom: 10px;
+
+			@mixin mediumScreen {
+				font-size: 1.2em;
+			}
+
+			@mixin largeScreen {
+				font-size: 1.8em;
+				padding-bottom: 10px;
+			}
 		}
 
 		&__title {
 			font-size: 1.5em;
 			padding-bottom: 10px;
+
+			@mixin mediumScreen {
+				font-size: 1.1em;
+			}
+
+			@mixin largeScreen {
+				font-size: 1.5em;
+			}
 		}
 
 		&__content {
 			margin: 10px auto;
-			padding: 30px 120px 30px 120px;
+			padding: 5px 15px 5px 15px;
 			width: 90%;
 			background-color: rgba(255, 255, 255, 0.2);
-			font-size: 1.3em;
+			font-size: 1em;
 			line-height: 1.5em;
+
+			@mixin mediumScreen {
+				font-size: 1em;
+				padding: 15px 60px 15px 60px;
+			}
+
+			@mixin largeScreen {
+				font-size: 1.3em;
+				padding: 30px 120px 30px 120px;
+			}
 		}
 	}
 
@@ -90,9 +154,11 @@
 	}
 }
 
+
+/* THIS MESS NEEDS TO BE CLEANED UP */
 .teacherLeft:after {
 	position: absolute;
-	left: 25%;
+	left: 10%;
 	font-family: FontAwesome;
 	font-size: 2.4em;
 	font-weight: normal;
@@ -101,8 +167,17 @@
 	content: '\f053';
 	text-decoration: inherit;
 	cursor: pointer;
-	transform: translateY(150px);
+	transform: translateY(75px);
 	z-index: 2;
+
+	@mixin mediumScreen {
+		left: 25%;
+		transform: translateY(100px);
+	}
+
+	@mixin largeScreen {
+		transform: translateY(150px);
+	}
 }
 
 .teacherRight:after {
@@ -115,7 +190,16 @@
 	content: '\f054';
 	text-decoration: inherit;
 	cursor: pointer;
-	transform: translateY(150px);
+	transform: translateY(75px);
 	z-index: 2;
-	right: 25%;
+	right: 10%;
+
+	@mixin mediumScreen {
+		right: 25%;
+		transform: translateY(100px);
+	}
+
+	@mixin largeScreen {
+		transform: translateY(150px);
+	}
 }

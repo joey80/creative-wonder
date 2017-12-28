@@ -1472,30 +1472,74 @@ a:hover {
 
 .teachers__card {
     display: inline-block;
-    width: 1200px;
-    height: 800px;
+    width: 350px;
+    height: 600px;
     text-align: center;
     color: #fff;
 }
 
-.teachers__card__container {
-    /* THIS SHOULD HOLD ALL OF THE TEACHERS */
-    height: 800px;
-    width: 6100px;
+@media (min-width: 790px) {
+    .teachers__card {
+        width: 800px;
+        height: 600px;
+    }
 }
 
+@media (min-width: 1025px) {
+    .teachers__card {
+        width: 1200px;
+        height: 800px;
+    }
+}
+
+/* THIS HOLDS ALL OF THE TEACHER CARDS */
+
+.teachers__card__container {
+    height: 600px;
+    width: 1770px;
+}
+
+@media (min-width: 790px) {
+    .teachers__card__container {
+        height: 600px;
+        width: 4020px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .teachers__card__container {
+        height: 800px;
+        width: 6020px;
+    }
+}
+
+/* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS ARE VISIBLE */
+
 .teachers__card__window {
-    /* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS WILL BE VISIBLE*/
     margin: auto;
-    width: 1200px;
-    height: 800px;
+    width: 350px;
+    height: 600px;
     overflow: hidden;
+}
+
+@media (min-width: 790px) {
+    .teachers__card__window {
+        width: 800px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .teachers__card__window {
+        width: 1200px;
+        height: 800px;
+    }
 }
 
 .teachers__card__image {
     display: block;
-    width: 250px;
-    height: 250px;
+    width: 175px;
+    height: 175px;
     border: 5px solid #fff;
     margin: 0 auto 20px auto;
     border-radius: 50%;
@@ -1503,6 +1547,13 @@ a:hover {
 }
 
 @media (min-width: 790px) {
+    .teachers__card__image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1025px) {
     .teachers__card__image {
         width: 300px;
         height: 300px;
@@ -1515,18 +1566,57 @@ a:hover {
     padding-bottom: 10px;
 }
 
+@media (min-width: 790px) {
+    .teachers__card__name {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .teachers__card__name {
+        font-size: 1.8em;
+        padding-bottom: 10px;
+    }
+}
+
 .teachers__card__title {
     font-size: 1.5em;
     padding-bottom: 10px;
 }
 
+@media (min-width: 790px) {
+    .teachers__card__title {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .teachers__card__title {
+        font-size: 1.5em;
+    }
+}
+
 .teachers__card__content {
     margin: 10px auto;
-    padding: 30px 120px 30px 120px;
+    padding: 5px 15px 5px 15px;
     width: 90%;
     background-color: rgba(255, 255, 255, .2);
-    font-size: 1.3em;
+    font-size: 1em;
     line-height: 1.5em;
+}
+
+@media (min-width: 790px) {
+    .teachers__card__content {
+        font-size: 1em;
+        padding: 15px 60px 15px 60px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .teachers__card__content {
+        font-size: 1.3em;
+        padding: 30px 120px 30px 120px;
+    }
 }
 
 .teachers a:link {
@@ -1549,9 +1639,11 @@ a:hover {
     text-decoration: underline;
 }
 
+/* THIS MESS NEEDS TO BE CLEANED UP */
+
 .teacherLeft:after {
     position: absolute;
-    left: 25%;
+    left: 10%;
     font-family: FontAwesome;
     font-size: 2.4em;
     font-weight: normal;
@@ -1560,9 +1652,24 @@ a:hover {
     content: '\f053';
     text-decoration: inherit;
     cursor: pointer;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
+    -webkit-transform: translateY(75px);
+            transform: translateY(75px);
     z-index: 2;
+}
+
+@media (min-width: 790px) {
+    .teacherLeft:after {
+        left: 25%;
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px);
+    }
+}
+
+@media (min-width: 1025px) {
+    .teacherLeft:after {
+        -webkit-transform: translateY(150px);
+                transform: translateY(150px);
+    }
 }
 
 .teacherRight:after {
@@ -1575,8 +1682,23 @@ a:hover {
     content: '\f054';
     text-decoration: inherit;
     cursor: pointer;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
+    -webkit-transform: translateY(75px);
+            transform: translateY(75px);
     z-index: 2;
-    right: 25%;
+    right: 10%;
+}
+
+@media (min-width: 790px) {
+    .teacherRight:after {
+        right: 25%;
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px);
+    }
+}
+
+@media (min-width: 1025px) {
+    .teacherRight:after {
+        -webkit-transform: translateY(150px);
+                transform: translateY(150px);
+    }
 }

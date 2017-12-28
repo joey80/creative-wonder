@@ -210,22 +210,16 @@ var MenuController = (function() {
 		}
 	};
 
-	var setSliderWidth = function() {
-
-		var numOfCards = teacherCard.length,
-			cardWidth = teacherCardWidth,
-			calcWidth = numOfCards * cardWidth;
-			teacherCardContainer.style.width = (calcWidth + 100) + "px";
-		console.log(teacherCardContainer.style.width);
-	}
-
+	
 
 	var divSliderLeft = function() {
 
-		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 100)) {
+		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 20)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
   		} else {
     		total -= teacherCardWidth;
+    		//console.log("Total: " + total);
+    		//console.log("Container: " + teacherCardContainerWidth);
     		var cssSelector = __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
       			targets: teacherCardContainer,
       			translateX: total
