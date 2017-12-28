@@ -1,3 +1,4 @@
+import anime from 'animejs';
 
 var DOMController = (function() {
     
@@ -14,7 +15,8 @@ var DOMController = (function() {
 		cbAccordionQuestion: 'chalkboard__accordion__question',
 		teacherCard: '.teachers__card',
 		teacherLeft: '.teacherLeft',
-		teacherRight: '.teacherRight'
+		teacherRight: '.teacherRight',
+		teacherCardContainer: '.teachers__card__container'
 	};
 
 	return {
@@ -37,14 +39,15 @@ var MenuController = (function() {
 		navMenuDown = DOM.navMenuDown,
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff,
-		//cbAccordion = '$('+DOM.cbAccordion+')';
 		cbAccordion = DOM.cbAccordion,
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
-		//teacherCard = document.getElementsByClassName(DOM.teacherCard),
 		teacherCard = document.querySelectorAll(DOM.teacherCard),
+		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
 		teacherLeft = DOM.teacherLeft,
 		teacherRight = DOM.teacherRight,
-		slideIndex = 1;
+		teacherCardContainer = document.querySelector(DOM.teacherCardContainer),
+		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,
+		total = 0;
 
 
     // Helper function to check to see if something is visible
@@ -134,31 +137,41 @@ var MenuController = (function() {
 		}
 	};
 
+	var setSliderWidth = function() {
 
-	var divSliderControl = function(evt) {
-		if(evt.target.className === "teacherLeft") {
-			divSlider(slideIndex + 1);
-		} else if (evt.target.className === "teacherRight") {
-			divSlider(slideIndex - 1);
-		}
+		var numOfCards = teacherCard.length,
+			cardWidth = teacherCardWidth,
+			calcWidth = numOfCards * cardWidth;
+			teacherCardContainer.style.width = (calcWidth + 100) + "px";
+		console.log(teacherCardContainer.style.width);
+	}
+
+
+	var divSliderLeft = function() {
+
+		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 100)) {
+    		teacherCardContainer.style.transform = "translateX("+total+"px)";
+  		} else {
+    		total -= teacherCardWidth;
+    		var cssSelector = anime({
+      			targets: teacherCardContainer,
+      			translateX: total
+    		})
+  		}
 	};
 
 
-	var divSlider = function(n) {
+	var divSliderRight = function() {
 
-		var slideWidth = document.documentElement.clientWidth;
-		if(n > teacherCard.length) {
-			slideIndex = 1;
-		}
-		if(n < 1) {
-			slideIndex = teacherCard.length;
-		}
-
-		for(var i = 0; i < teacherCard.length; i++) {
-			teacherCard[i].style.marginLeft = (slideWidth/2) + "px";
-		}
-
-		teacherCard[slideIndex-1].style.marginLeft = 0;
+		if(total === 0) {
+    		teacherCardContainer.style.transform = "translateX("+total+"px)";
+  		} else {
+      		total += teacherCardWidth;
+      		var cssSelector = anime({
+     	 		targets: teacherCardContainer,
+      			translateX: total
+    		})
+  		}
 	};
 
 
@@ -166,8 +179,8 @@ var MenuController = (function() {
 	var setupEventListeners = function() {
 		
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
-		document.querySelector(DOM.teacherLeft).addEventListener('click', divSliderControl);
-		document.querySelector(DOM.teacherRight).addEventListener('click', divSliderControl);
+		document.querySelector(DOM.teacherLeft).addEventListener('click', divSliderLeft);
+		document.querySelector(DOM.teacherRight).addEventListener('click', divSliderRight);
 		window.addEventListener('scroll', menuCloseOnScroll);
 	};	
 
@@ -177,7 +190,6 @@ var MenuController = (function() {
 			setupEventListeners();
 			mobileMenuHide();
 			accordionControl();
-			divSlider(slideIndex);
 
 			// Anything else to come
 		}

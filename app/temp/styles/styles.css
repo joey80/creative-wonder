@@ -1471,9 +1471,25 @@ a:hover {
 }
 
 .teachers__card {
-    min-width: 100%;
+    display: inline-block;
+    width: 1200px;
+    height: 800px;
     text-align: center;
     color: #fff;
+}
+
+.teachers__card__container {
+    /* THIS SHOULD HOLD ALL OF THE TEACHERS */
+    height: 800px;
+    width: 6100px;
+}
+
+.teachers__card__window {
+    /* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS WILL BE VISIBLE*/
+    margin: auto;
+    width: 1200px;
+    height: 800px;
+    overflow: hidden;
 }
 
 .teachers__card__image {
@@ -1533,10 +1549,34 @@ a:hover {
     text-decoration: underline;
 }
 
-.teacherLeft {
+.teacherLeft:after {
+    position: absolute;
+    left: 25%;
+    font-family: FontAwesome;
+    font-size: 2.4em;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    content: '\f053';
+    text-decoration: inherit;
     cursor: pointer;
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
+    z-index: 2;
 }
 
-.teacherRight {
+.teacherRight:after {
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 2.4em;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    content: '\f054';
+    text-decoration: inherit;
     cursor: pointer;
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
+    z-index: 2;
+    right: 25%;
 }

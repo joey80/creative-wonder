@@ -16,9 +16,23 @@
 	color: #fff;
 
 	&__card {
-		min-width: 100%;
+		display: inline-block;
+		width: 1200px;
+		height: 800px;
 		text-align: center;
 		color: #fff;
+
+		&__container { /* THIS SHOULD HOLD ALL OF THE TEACHERS */
+			height: 800px;
+			width: 6100px;
+		}
+
+		&__window { /* THIS IS THE WINDOW WHERE ALL OF THE TEACHERS WILL BE VISIBLE*/
+			margin: auto;
+			width: 1200px;
+			height: 800px;
+			overflow: hidden;
+		}
 
 		&__image {
 			display: block;
@@ -76,10 +90,32 @@
 	}
 }
 
-.teacherLeft {
+.teacherLeft:after {
+	position: absolute;
+	left: 25%;
+	font-family: FontAwesome;
+	font-size: 2.4em;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	content: '\f053';
+	text-decoration: inherit;
 	cursor: pointer;
+	transform: translateY(150px);
+	z-index: 2;
 }
 
-.teacherRight {
+.teacherRight:after {
+	position: absolute;
+	font-family: FontAwesome;
+	font-size: 2.4em;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	content: '\f054';
+	text-decoration: inherit;
 	cursor: pointer;
+	transform: translateY(150px);
+	z-index: 2;
+	right: 25%;
 }
