@@ -1497,20 +1497,20 @@ a:hover {
 
 .teachers__card__container {
     height: 600px;
-    width: 1770px;
+    width: 1750px;
 }
 
 @media (min-width: 790px) {
     .teachers__card__container {
         height: 600px;
-        width: 4020px;
+        width: 4000px;
     }
 }
 
 @media (min-width: 1025px) {
     .teachers__card__container {
         height: 800px;
-        width: 6020px;
+        width: 6000px;
     }
 }
 

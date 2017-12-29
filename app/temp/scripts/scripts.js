@@ -214,10 +214,10 @@ var MenuController = (function() {
 
 	var divSliderLeft = function() {
 
-		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 4)) {
+		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 0)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
   		} else {
-    		total -= (teacherCardWidth + 4);
+    		total -= (teacherCardWidth + 0);
     		var cssSelector = __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
       			targets: teacherCardContainer,
       			translateX: total
@@ -231,7 +231,7 @@ var MenuController = (function() {
 		if(total === 0) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
   		} else {
-      		total += (teacherCardWidth + 4);
+      		total += (teacherCardWidth + 0);
       		var cssSelector = __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
      	 		targets: teacherCardContainer,
       			translateX: total

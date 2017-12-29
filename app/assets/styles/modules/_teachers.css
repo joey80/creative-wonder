@@ -36,16 +36,16 @@
 		/* THIS HOLDS ALL OF THE TEACHER CARDS */
 		&__container {
 			height: 600px;
-			width: 1770px;
+			width: 1750px;
 
 			@mixin mediumScreen {
 				height: 600px;
-				width: 4020px;
+				width: 4000px;
 			}
 
 			@mixin largeScreen {
 				height: 800px;
-				width: 6020px;
+				width: 6000px;
 			}
 		}
 
