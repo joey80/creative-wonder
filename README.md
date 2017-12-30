@@ -9,6 +9,7 @@ This is a demo website for a fictional preschool called Creative Wonder. This is
 * [Gulp](https://gulpjs.com/)
 * [Webpack](https://webpack.js.org/)
 * [PostCSS](http://postcss.org/)
+* [Animejs](http://animejs.com)
 * Javascript <3
 
 ## Authors

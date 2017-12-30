@@ -14,8 +14,8 @@ var DOMController = (function() {
 		cbAccordion: '.chalkboard__accordion',
 		cbAccordionQuestion: 'chalkboard__accordion__question',
 		teacherCard: '.teachers__card',
-		teacherLeft: '.teacherLeft',
-		teacherRight: '.teacherRight',
+		teacherLeftArrow: '.teachers__card__arrow__left',
+		teacherRightArrow: '.teachers__card__arrow__right',
 		teacherCardContainer: '.teachers__card__container'
 	};
 
@@ -43,8 +43,8 @@ var MenuController = (function() {
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
 		teacherCard = document.querySelectorAll(DOM.teacherCard),
 		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
-		teacherLeft = DOM.teacherLeft,
-		teacherRight = DOM.teacherRight,
+		teacherLeftArrow = document.querySelector(DOM.teacherLeftArrow),
+		teacherRightArrow = document.querySelector(DOM.teacherRightArrow),
 		teacherCardContainer = document.querySelector(DOM.teacherCardContainer),
 		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,
 		total = 0;
@@ -136,18 +136,20 @@ var MenuController = (function() {
 			});
 		}
 	};
-
 	
 
 	var divSliderLeft = function() {
 
-		if(total === ( (-teacherCardContainerWidth + teacherCardWidth) + 0)) {
+		if(total === (-teacherCardContainerWidth + teacherCardWidth)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
-  		} else {
+    		teacherLeftArrow.style.display = "none";
+    	} else {
+    		teacherRightArrow.style.display = "inline-block";
     		total -= (teacherCardWidth + 0);
     		var cssSelector = anime({
       			targets: teacherCardContainer,
-      			translateX: total
+      			translateX: total,
+      			duration: 1500
     		})
   		}
 	};
@@ -157,11 +159,14 @@ var MenuController = (function() {
 
 		if(total === 0) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
+    		teacherRightArrow.style.display = "none";
   		} else {
-      		total += (teacherCardWidth + 0);
+  			teacherLeftArrow.style.display = "inline-block";
+      		total += teacherCardWidth;
       		var cssSelector = anime({
      	 		targets: teacherCardContainer,
-      			translateX: total
+      			translateX: total,
+      			duration: 1500
     		})
   		}
 	};
@@ -171,8 +176,8 @@ var MenuController = (function() {
 	var setupEventListeners = function() {
 		
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
-		document.querySelector(DOM.teacherLeft).addEventListener('click', divSliderLeft);
-		document.querySelector(DOM.teacherRight).addEventListener('click', divSliderRight);
+		document.querySelector(DOM.teacherLeftArrow).addEventListener('click', divSliderLeft);
+		document.querySelector(DOM.teacherRightArrow).addEventListener('click', divSliderRight);
 		window.addEventListener('scroll', menuCloseOnScroll);
 	};	
 

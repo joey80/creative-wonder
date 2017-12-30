@@ -133,6 +133,54 @@
 				padding: 30px 120px 30px 120px;
 			}
 		}
+
+		&__arrow__left {
+			position: absolute;
+			left: 10%;
+			font-family: FontAwesome;
+			font-size: 1.5em;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			text-decoration: inherit;
+			cursor: pointer;
+			transform: translateY(75px);
+			z-index: 2;
+
+			@mixin mediumScreen {
+				font-size: 2.4em;
+				left: 25%;
+				transform: translateY(100px);
+			}
+
+			@mixin largeScreen {
+				transform: translateY(150px);
+			}
+		}
+
+		&__arrow__right {
+			position: absolute;
+			font-family: FontAwesome;
+			font-size: 1.5em;
+			font-weight: normal;
+			font-style: normal;
+			display: none;
+			text-decoration: inherit;
+			cursor: pointer;
+			transform: translateY(75px);
+			z-index: 2;
+			right: 10%;
+
+			@mixin mediumScreen {
+				font-size: 2.4em;
+				right: 25%;
+				transform: translateY(100px);
+			}
+
+			@mixin largeScreen {
+				transform: translateY(150px);
+			}
+		}
 	}
 
 	& a:link {
@@ -152,55 +200,5 @@
 	& a:hover {
 		background-color: transparent;
 		text-decoration: underline;
-	}
-}
-
-
-/* THIS MESS NEEDS TO BE CLEANED UP */
-.teacherLeft:after {
-	position: absolute;
-	left: 10%;
-	font-family: FontAwesome;
-	font-size: 2.4em;
-	font-weight: normal;
-	font-style: normal;
-	display: inline-block;
-	content: '\f053';
-	text-decoration: inherit;
-	cursor: pointer;
-	transform: translateY(75px);
-	z-index: 2;
-
-	@mixin mediumScreen {
-		left: 25%;
-		transform: translateY(100px);
-	}
-
-	@mixin largeScreen {
-		transform: translateY(150px);
-	}
-}
-
-.teacherRight:after {
-	position: absolute;
-	font-family: FontAwesome;
-	font-size: 2.4em;
-	font-weight: normal;
-	font-style: normal;
-	display: inline-block;
-	content: '\f054';
-	text-decoration: inherit;
-	cursor: pointer;
-	transform: translateY(75px);
-	z-index: 2;
-	right: 10%;
-
-	@mixin mediumScreen {
-		right: 25%;
-		transform: translateY(100px);
-	}
-
-	@mixin largeScreen {
-		transform: translateY(150px);
 	}
 }
