@@ -40,10 +40,11 @@
 		}
 
 		&--third {
-			width: 100%;
+			flex: 1;
+			flex-basis: 100%;
 
 			@mixin mediumScreen {
-				width: 33.3333%;
+				flex: 1;
 			}
 		}
 

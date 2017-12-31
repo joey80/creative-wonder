@@ -12,6 +12,12 @@ This is a demo website for a fictional preschool called Creative Wonder. This is
 * [Animejs](http://animejs.com)
 * Javascript <3
 
+## Coming Soon...
+
+* Admin backend
+* User signups
+
+
 ## Authors
 
 * **Joey Leger** - [joey80](https://github.com/joey80)
