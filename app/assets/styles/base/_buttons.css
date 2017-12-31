@@ -36,6 +36,10 @@
 		outline: 1px dotted #fff;
 	}
 
+	&--large {
+		font-size: 1.1em;
+	}
+
 	&--small {
 		padding: 7px 20px;
 

@@ -675,6 +675,10 @@ a:hover {
     outline: 1px dotted #fff;
 }
 
+.button--large {
+    font-size: 1.1em;
+}
+
 .button--small {
     padding: 7px 20px;
 }
@@ -1700,4 +1704,62 @@ a:hover {
 .teachers a:hover {
     background-color: transparent;
     text-decoration: underline;
+}
+
+/*
+	
+	
+// ==========================================================================
+// Widgets Styles
+// ==========================================================================
+
+
+*/
+
+.widgets__signup {
+    margin-top: 40px;
+}
+
+.widgets__signup__form {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (min-width: 790px) {
+    .widgets__signup__form {
+        min-width: 90%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .widgets__signup__form {
+        min-width: 100%;
+    }
+}
+
+.widgets__signup__fieldset {
+    padding: 10px 10px 10px 10px;
+    border: 1px dashed rgba(0, 0, 0, .2);
+}
+
+@media (min-width: 790px) {
+    .widgets__signup__fieldset {
+        padding: 30px 30px 30px 30px;
+    }
+}
+
+.widgets__signup__input[type=email] {
+    display: inline-block;
+    width: 90%;
+    padding: 12px;
+    color: #000;
+    border: 1px solid rgba(72, 72, 72, .3);
+    background-color: #fff;
+}
+
+@media (min-width: 790px) {
+    .widgets__signup__input[type=email] {
+        width: 75%;
+    }
 }
