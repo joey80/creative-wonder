@@ -73,6 +73,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animejs__);
 
 
+
+
 var DOMController = (function() {
     
     var DOMstrings = {
@@ -96,25 +98,23 @@ var DOMController = (function() {
 		getDOMstrings: function() {
 			return DOMstrings;
 		}
-	}
+	};
 
 })();
 
 var MenuController = (function() {
 
 	var DOM = DOMController.getDOMstrings(),
-		navMenu = document.querySelector(DOM.navMenu),                        // The menu div
-		navClass = document.querySelector(DOM.navMenu).classList,             // The menu div classes
-		navMenuListClass = document.querySelector(DOM.navMenuList).classList, // The menu ul
-		menuButtonClass = document.querySelector(DOM.menuButton).classList,   // The header button
-		menuButtonText = document.querySelector(DOM.menuButtonText),          // The header button text
+		navMenu = document.querySelector(DOM.navMenu),
+		navClass = document.querySelector(DOM.navMenu).classList,
+		navMenuListClass = document.querySelector(DOM.navMenuList).classList,
+		menuButtonClass = document.querySelector(DOM.menuButton).classList,
+		menuButtonText = document.querySelector(DOM.menuButtonText),
 		navMenuHide = DOM.navMenuHide,
 		navMenuDown = DOM.navMenuDown,
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff,
-		cbAccordion = DOM.cbAccordion,
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
-		teacherCard = document.querySelectorAll(DOM.teacherCard),
 		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
 		teacherLeftArrow = document.querySelector(DOM.teacherLeftArrow),
 		teacherRightArrow = document.querySelector(DOM.teacherRightArrow),
@@ -126,7 +126,7 @@ var MenuController = (function() {
     // Helper function to check to see if something is visible
 	var isVisible = function(e) {
 		return !!( e.offsetWidth || e.offsetHeight );
-	}
+	};
 
 
     // Controls the animation for revealing the ul list in the menu and dropping down the 
@@ -153,19 +153,18 @@ var MenuController = (function() {
 	var menuCloseOnScroll = function() {
 
 		if (navClass.contains(navMenuHide) || isVisible(menuButtonText) === false) {
-			return
+			return;
 		} else {
 			navClass.add(navMenuHide);
 			addRemoveArrow();
-			return
+			return;
 		}
 	};
-
 
 	// On mobile this hides the menu. It calculates how tall the menu div is and then
 	// moves it off screen by that much
 	var mobileMenuHide = function() {
-		let mobileMenuHeight = navMenu.offsetHeight;
+		var mobileMenuHeight = navMenu.offsetHeight;
 		if (isVisible(menuButtonText) === false) {
 			navMenu.style.marginTop = "-" + mobileMenuHeight + "px";
 		}
@@ -223,7 +222,7 @@ var MenuController = (function() {
       			targets: teacherCardContainer,
       			translateX: total,
       			duration: 1500
-    		})
+    		});
   		}
 	};
 
@@ -240,7 +239,7 @@ var MenuController = (function() {
      	 		targets: teacherCardContainer,
       			translateX: total,
       			duration: 1500
-    		})
+    		});
   		}
 	};
 
@@ -256,21 +255,18 @@ var MenuController = (function() {
 
 	return {
 		init: function() {
-			console.log('Welcome To Creative Wonder!');
 			setupEventListeners();
 			mobileMenuHide();
 			accordionControl();
 
 			// Anything else to come
 		}
-	}
+	};
 
 })();
 
 
 MenuController.init();
-
-
 
 
 
@@ -285,25 +281,6 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
 		}, false);
 	}
 }
-
-
-
-/*
-
-
-
-// put all slides at display none
-// put all slides at document.documentElement.clientWidth marginRight
-// set first slide a 0 display block
-// have plus/minus arrows
-
-// on left arrow move the slide to the left and then reset it to the right
-// on right arrow move the slide to the right and then reset it
-
-
-
-
-*/
 
 /***/ }),
 /* 1 */

@@ -2,11 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cPT+Sans+Narrow:400,700%7cCabin+Sketch:400,700" rel='stylesheet' type='text/css'>
-  <link href="http://fonts.googleapis.com/css?family=Amatic+SC%7cHomemade+Apple" rel='stylesheet' type='text/css'>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="temp/styles/styles.css">
-
+    
   <title>Creative Wonder</title>
   
   <meta name="keywords" content="">
@@ -40,7 +36,7 @@
     <!-- MENU BLOCK STARTS -->
     <div class="menu menu--hidden">
       <!-- MENU GRID STARTS -->
-      <div class="grid">
+      <nav class="grid">
         <ul class="menu__list__first">
           <li>Home</li>
           <li>About</li>
@@ -62,14 +58,14 @@
           </li>
           <li>Contact Us</li>
         </ul>
-      </div>
+      </nav>
       <!-- MENU GRID ENDS -->
     </div>
     <!-- MENU BLOCK ENDS -->
       
 
     <!-- LARGE HERO BLOCK STARTS -->
-    <div class="large-hero">
+    <section class="large-hero">
       <!-- LARGE HERO GRID STARTS -->
       <div class="grid">
         <div class="large-hero__content grid__cell grid__cell--half">
@@ -84,12 +80,12 @@
       </div>
       <!-- LARGE HERO GRID ENDS -->
       <div class="large-hero__ship"></div>
-    </div>
+    </section>
     <!-- LARGE HERO BLOCK ENDS -->
 
 
     <!-- INTRO BLOCK STARTS -->
-    <div class="intro">
+    <section class="intro">
       <!-- INTRO BLOCK GRID STARTS -->
       <div class="grid">
         <div class="grid__cell--full grid__cell--center title">
@@ -110,12 +106,12 @@
         </div>
       </div>
       <!-- INTRO BLOCK GRID ENDS -->
-    </div>
+    </section>
     <!-- INTRO BLOCK ENDS -->
 
 
     <!-- CHALKBOARD BLOCK STARTS -->
-    <div class="chalkboard grid--gutter-bottom">
+    <section class="chalkboard grid--gutter-bottom">
       <!-- CHALKBOARD BLOCK GRID STARTS -->
       <div class="grid">
         <div class="grid__cell--full grid__cell--center title--white">
@@ -182,12 +178,12 @@
         </div>
       </div>
       <!-- CHALKBOARD BLOCK GRID ENDS -->
-    </div>
+    </section>
     <!-- CHALKBOARD BLOCK ENDS -->
 
 
     <!-- BLOG BLOCK STARTS -->
-    <div class="blog grid--gutter-bottom">
+    <section class="blog grid--gutter-bottom">
       <!-- BLOG BLOCK GRID STARTS -->
       <div class="grid">
         <div class="grid__cell--full grid__cell--center title">
@@ -228,12 +224,12 @@
         </div>
       </div>
       <!-- BLOG BLOCK GRID ENDS -->
-    </div>
+    </section>
     <!-- BLOG BLOCK ENDS -->
 
 
     <!-- FAQ BLOCK STARTS -->
-    <div class="chalkboard grid--gutter-bottom">
+    <section class="chalkboard grid--gutter-bottom">
       <!-- FAQ GRID STARTS -->
       <div class="grid">
         <div class="grid__cell--full grid__cell--center title--white">
@@ -271,7 +267,8 @@
             in the class. The brain is most receptive to learning languages during early childhood. That's why we start
             two-year-old children in Spanish class.</p>
           </div>
-          <span class="chalkboard__accordion__question">I won't be available to pick-up my child today, so I'm arranging for my oldest son to pick him up. Do I need to send a note?</span>
+          <span class="chalkboard__accordion__question">I won't be available to pick-up my child today, so I'm arranging
+          for my oldest son to pick him up. Do I need to send a note?</span>
           <div class="chalkboard__accordion__answer">
             <p>If someone else is picking up your child, you must inform Peartree in writing and in person. Send us a note
             detailing your plans, including the name of the person you are authorizing to pick-up your child and the date of
@@ -294,12 +291,12 @@
         </div>
       </div>
       <!-- FAQ GRID ENDS -->
-    </div>
+    </section>
     <!-- FAQ BLOCK ENDS -->
 
 
     <!-- TEACHERS BLOCK STARTS -->
-    <div class="teachers">    
+    <section class="teachers">    
       <!-- TEACHERS BLOCK GRID STARTS -->
       <div class="grid">
         <div class="grid__cell--full grid__cell--center title--white">
@@ -396,12 +393,12 @@
         </div>
       </div>
       <!-- TEACHERS BLOCK GRID ENDS -->
-    </div>
+    </section>
     <!-- TEACHERS BLOCK ENDS -->
 
 
     <!-- WIDGET BLOCK STARTS -->
-    <div class="widgets__signup">
+    <section class="widgets__signup">
       <div class="grid">
         <div class="grid__cell--full">
           <form class="widgets__signup__form">
@@ -412,12 +409,12 @@
           </form>
         </div>
       </div>
-    </div>
+    </section>
     <!-- WIDGET BLOCK ENDS -->
 
 
     <!-- FOOTER BLOCK STARTS -->
-    <div class="footer">
+    <footer class="footer">
       <!-- FOOTER BLOCK GRID STARTS -->
       <div class="grid grid--wrap grid--top">
         <div class="grid__cell grid__cell--third">
@@ -453,10 +450,18 @@
         </div>
       </div>
       <!-- FOOTER BLOCK GRID ENDS -->
-    </div>
+    </footer>
     <!-- FOOTER BLOCK ENDS -->
 
-  <script type="text/javascript" src="temp/scripts/scripts.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Lato|PT+Sans+Narrow" rel="stylesheet">
+
+  <!-- build:css ./assets/styles/styles.css -->
+  <link rel="stylesheet" href="temp/styles/styles.css">
+  <!-- endbuild -->
+
+  <!-- build:js ./assets/scripts/scripts.js -->
+  <script async type="text/javascript" src="temp/scripts/scripts.js"></script>
+  <!-- endbuild -->
 
 </body>
 </html>
