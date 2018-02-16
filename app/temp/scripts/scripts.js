@@ -115,11 +115,11 @@ var MenuController = (function() {
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff,
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
-		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
+		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,  //move this to the function
 		teacherLeftArrow = document.querySelector(DOM.teacherLeftArrow),
 		teacherRightArrow = document.querySelector(DOM.teacherRightArrow),
 		teacherCardContainer = document.querySelector(DOM.teacherCardContainer),
-		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,
+		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,  //move this to the function
 		total = 0;
 
 
