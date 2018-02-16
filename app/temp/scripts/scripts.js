@@ -115,11 +115,11 @@ var MenuController = (function() {
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff,
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
-		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,  //move this to the function
+		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
 		teacherLeftArrow = document.querySelector(DOM.teacherLeftArrow),
 		teacherRightArrow = document.querySelector(DOM.teacherRightArrow),
 		teacherCardContainer = document.querySelector(DOM.teacherCardContainer),
-		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,  //move this to the function
+		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,
 		total = 0;
 
 
@@ -160,6 +160,7 @@ var MenuController = (function() {
 			return;
 		}
 	};
+
 
 	// On mobile this hides the menu. It calculates how tall the menu div is and then
 	// moves it off screen by that much
@@ -212,6 +213,8 @@ var MenuController = (function() {
 
 	var divSliderLeft = function() {
 
+		//var teacherCardWidth = document.querySelector('.teachers__card').scrollWidth;
+
 		if(total === (-teacherCardContainerWidth + teacherCardWidth)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
     		teacherLeftArrow.style.display = "none";
@@ -228,6 +231,8 @@ var MenuController = (function() {
 
 
 	var divSliderRight = function() {
+
+		//var teacherCardWidth = document.querySelector('.teachers__card').scrollWidth;
 
 		if(total === 0) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
@@ -267,7 +272,6 @@ var MenuController = (function() {
 
 
 MenuController.init();
-
 
 
 // Fixes the iOS rotation zoom bug
