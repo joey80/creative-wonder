@@ -89,8 +89,8 @@ var DOMController = (function() {
 		cbAccordion: '.chalkboard__accordion',
 		cbAccordionQuestion: 'chalkboard__accordion__question',
 		teacherCard: '.teachers__card',
-		teacherLeftArrow: '.teachers__card__arrow__left',
-		teacherRightArrow: '.teachers__card__arrow__right',
+		teacherLeftArrow: 'left_arrow',
+		teacherRightArrow: 'right_arrow',
 		teacherCardContainer: '.teachers__card__container'
 	};
 
@@ -115,17 +115,22 @@ var MenuController = (function() {
 		arrowOn = DOM.menuButtonArrowOn,
 		arrowOff = DOM.menuButtonArrowOff,
 		cbAccordionQuestion = document.getElementsByClassName(DOM.cbAccordionQuestion),
-		teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
-		teacherLeftArrow = document.querySelector(DOM.teacherLeftArrow),
-		teacherRightArrow = document.querySelector(DOM.teacherRightArrow),
-		teacherCardContainer = document.querySelector(DOM.teacherCardContainer),
-		teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth,
 		total = 0;
+
+	var teacherCardContainer = document.querySelector('.teachers__card__container');
+
+	if (typeof teacherCardContainer === 'undefined' || !teacherCardContainer) {
+	} else {
+		var teacherCardWidth = document.querySelector(DOM.teacherCard).scrollWidth,
+			teacherLeftArrow = document.getElementById(DOM.teacherLeftArrow),
+			teacherRightArrow = document.getElementById(DOM.teacherRightArrow),
+			teacherCardContainerWidth = document.querySelector(DOM.teacherCardContainer).clientWidth;
+	};
 
 
     // Helper function to check to see if something is visible
 	var isVisible = function(e) {
-		return !!( e.offsetWidth || e.offsetHeight );
+		return !!( e.offsetWidth || e.offsetHeight);
 	};
 
 
@@ -213,13 +218,11 @@ var MenuController = (function() {
 
 	var divSliderLeft = function() {
 
-		//var teacherCardWidth = document.querySelector('.teachers__card').scrollWidth;
-
 		if(total === (-teacherCardContainerWidth + teacherCardWidth)) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
-    		teacherLeftArrow.style.display = "none";
+    		//teacherLeftArrow.style.display = "none";
     	} else {
-    		teacherRightArrow.style.display = "inline-block";
+    		//teacherRightArrow.style.display = "inline-block";
     		total -= (teacherCardWidth + 0);
     		var cssSelector = __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
       			targets: teacherCardContainer,
@@ -232,13 +235,11 @@ var MenuController = (function() {
 
 	var divSliderRight = function() {
 
-		//var teacherCardWidth = document.querySelector('.teachers__card').scrollWidth;
-
 		if(total === 0) {
     		teacherCardContainer.style.transform = "translateX("+total+"px)";
-    		teacherRightArrow.style.display = "none";
+    		//teacherRightArrow.style.display = "none";
   		} else {
-  			teacherLeftArrow.style.display = "inline-block";
+  			//teacherLeftArrow.style.display = "inline-block";
       		total += teacherCardWidth;
       		var cssSelector = __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
      	 		targets: teacherCardContainer,
@@ -253,10 +254,13 @@ var MenuController = (function() {
 	var setupEventListeners = function() {
 		
 		document.querySelector(DOM.menuButton).addEventListener('click', menuToggle);
-		document.querySelector(DOM.teacherLeftArrow).addEventListener('click', divSliderLeft);
-		document.querySelector(DOM.teacherRightArrow).addEventListener('click', divSliderRight);
+		if(typeof teacherCardContainer === 'undefined' || !teacherCardContainer) {
+		} else {
+			document.getElementById(DOM.teacherLeftArrow).addEventListener('click', divSliderLeft);
+			document.getElementById(DOM.teacherRightArrow).addEventListener('click', divSliderRight);
+		}
 		window.addEventListener('scroll', menuCloseOnScroll);
-	};	
+	};
 
 	return {
 		init: function() {
@@ -272,7 +276,6 @@ var MenuController = (function() {
 
 
 MenuController.init();
-
 
 // Fixes the iOS rotation zoom bug
 // CREDIT: http://adactio.com/journal/4470/
