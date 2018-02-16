@@ -65,6 +65,7 @@
  		padding: 7px;
  		height: 44px;
  		width: 40px;
+ 		transition: all 0.2s linear;
 
  		@mixin mediumScreen {
  			font-size: .85rem;
@@ -86,6 +87,7 @@
 	 			color: #d91122;
 	 			border-color: #fff;
 	 			background-color: #fff;
+	 			transition: all 0.2s linear;
 	 		}
  		}
 

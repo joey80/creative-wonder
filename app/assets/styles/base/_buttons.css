@@ -29,7 +29,8 @@
 		border: 1px solid rgba(72, 72, 72, 0.3);
 		background-color: #fff;
 		box-shadow: none;
-		text-shadow: none
+		text-shadow: none;
+		transition: all 0.2s linear;
 	}
 
 	&:focus {

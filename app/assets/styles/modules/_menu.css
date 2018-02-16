@@ -29,6 +29,30 @@
 		height: 60px;
 		font-size: 0.95rem;
 	}
+
+	& a:link {
+		text-decoration: none;
+	    color: inherit;
+	    background-color: transparent;
+	}
+
+	& a:visited {
+		text-decoration: none;
+	    color: inherit;
+	    background-color: transparent;
+	}
+
+	& a:active {
+		text-decoration: none;
+	    color: inherit;
+	    background-color: transparent;
+	}
+
+	& a:hover {
+		text-decoration: none;
+	    color: inherit;
+	    background-color: transparent;
+	}
 	
 	&__list__first {
 		padding-top: 5px;

@@ -416,14 +416,22 @@ template {
     display: none;
 }
 
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+/* FONT PATH
+ * -------------------------- */
+
 @font-face {
     font-family: 'FontAwesome';
-    src: url('../../assets/styles/fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('../../assets/styles/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
-         url('../../assets/styles/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
-         url('../../assets/styles/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
-         url('../../assets/styles/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
-         url('../../assets/styles/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+         url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+         url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+         url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -3599,6 +3607,8 @@ a:hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     text-shadow: none;
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
 }
 
 .button:focus {
@@ -3695,6 +3705,8 @@ a:hover {
     padding: 7px;
     height: 44px;
     width: 40px;
+    -webkit-transition: all .2s linear;
+            transition: all .2s linear;
 }
 
 @media (min-width: 790px) {
@@ -3717,6 +3729,8 @@ a:hover {
         color: #d91122;
         border-color: #fff;
         background-color: #fff;
+        -webkit-transition: all .2s linear;
+                transition: all .2s linear;
     }
 }
 
@@ -3815,6 +3829,30 @@ a:hover {
         height: 60px;
         font-size: .95rem;
     }
+}
+
+.menu a:link {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+.menu a:visited {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+.menu a:active {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
 }
 
 .menu__list__first {
