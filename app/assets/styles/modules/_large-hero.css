@@ -27,6 +27,28 @@
 		transform: translateY(-60px);
 	}
 
+	&__about {
+		background-image: url("../../assets/images/about__hero--small.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-image: url("../../assets/images/large-hero__border.png") 0 0 7 fill;
+		border-image-repeat: repeat repeat;
+		border-width: 0 0 7px;
+		border-style: solid;
+		height: 630px;
+
+		@mixin mediumScreen {
+			height: 600px;
+			background-image: url("../../assets/images/about__hero--medium.jpg");
+		}
+
+		@mixin largeScreen {
+			background-image: url("../../assets/images/about__hero--large.jpg");
+			margin-top: 80px;
+			transform: translateY(-60px);
+		}
+	}
+
 	&__image {
 		display: block;
 		max-width: 100%;
