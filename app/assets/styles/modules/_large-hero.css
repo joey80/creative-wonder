@@ -35,10 +35,10 @@
 		border-image-repeat: repeat repeat;
 		border-width: 0 0 7px;
 		border-style: solid;
-		height: 630px;
+		height: 430px;
 
 		@mixin mediumScreen {
-			height: 600px;
+			height: 400px;
 			background-image: url("../../assets/images/about__hero--medium.jpg");
 		}
 

@@ -4041,12 +4041,12 @@ a:hover {
     border-image-repeat: repeat repeat;
     border-width: 0 0 7px;
     border-style: solid;
-    height: 630px;
+    height: 430px;
 }
 
 @media (min-width: 790px) {
     .large-hero__about {
-        height: 600px;
+        height: 400px;
         background-image: url("../../assets/images/about__hero--medium.jpg");
     }
 }
