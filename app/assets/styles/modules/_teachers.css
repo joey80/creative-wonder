@@ -164,7 +164,7 @@
 			font-size: 1.5em;
 			font-weight: normal;
 			font-style: normal;
-			display: none;
+			display: inline-block;
 			text-decoration: inherit;
 			cursor: pointer;
 			transform: translateY(75px);
